@@ -32,22 +32,22 @@
 						<form:input path="password" name="password" id="password"/>
 					</td>
 				</tr>
-				<tr>
+<%-- 				<tr>
 					<td>
-						<form:label path="name">FullName</form:label>
+						<form:label path="username">FullName</form:label>
 					</td>
 					<td>
-						<form:input path="name" name="name" id="name"/>
+						<form:input path="username" name="name" id="name"/>
 					</td>
-				</tr>
-				<tr>
+	 --%>			</tr>
+				<%-- <tr>
 					<td>
 						<form:label path="age">Age</form:label>
 					</td>
 					<td>
 						<form:input path="age" name="age" id="age"/>
 					</td>
-				</tr>
+				</tr> --%>
 				<tr>
 					<td>
 					<form:button name="register" id="register">Register</form:button>
