@@ -1,18 +1,15 @@
 package knh.t7.repository;
 
-import org.springframework.stereotype.Repository;
-
 import knh.t7.model.User;
 
-@Repository
-public class UserDao {
-	
+public class UserDao extends SimpleCrudDao {
+
 	public boolean authenticate(User user) {
-		return !user.getUsername().equals(user.getPassword());
+		return true;
 	}
 	
 	public boolean registry(User user) {
-		return !user.getUsername().equals(user.getPassword());
+		return true;
 	}
-
+	
 }

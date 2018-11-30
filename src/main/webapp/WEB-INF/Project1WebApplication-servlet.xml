@@ -16,9 +16,12 @@
 	
 	<import resource="classpath:HibernateConfig.xml"/>
 	
-	<mvc:resources mapping="/resources/**" location="/resources/"  
+	
+	
+	
+<!-- 	not use yet -->
+<!-- 	<mvc:resources mapping="/resources/**" location="/resources/"  
 	cache-period="31556926"/>
-
     <mvc:annotation-driven />
-
+ -->
 </beans>

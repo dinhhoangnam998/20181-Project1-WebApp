@@ -36,6 +36,16 @@ public class User {
 		super();
 	}
 
+	
+	// just for test
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
+
+
 	public User(String username, String password, String fullname, String email, boolean state) {
 		super();
 		this.username = username;
