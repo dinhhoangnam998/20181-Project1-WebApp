@@ -4,16 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import knh.t7.model.User;
-import knh.t7.repository.UserRepo;
+import knh.t7.repository.UserDao;
 
 @Service
 public class RegistryService {
 	
 	@Autowired
-	private UserRepo userRepo;
+	private UserDao userDao;
 	
 	public boolean registry(User user) {
-		return userRepo.registry(user);
+		return userDao.registry(user);
 	}
 
 }

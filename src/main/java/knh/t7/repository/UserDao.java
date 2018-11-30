@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import knh.t7.model.User;
 
 @Repository
-public class UserRepo {
+public class UserDao {
 	
 	public boolean authenticate(User user) {
 		return !user.getUsername().equals(user.getPassword());
