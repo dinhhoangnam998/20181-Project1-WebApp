@@ -13,21 +13,21 @@ public class SaleDate {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private Date date;
+	private Date saledate;
 
 	public SaleDate() {
 		super();
 	}
 
-	public SaleDate(Date date) {
+	public SaleDate(Date saledate) {
 		super();
-		this.date = date;
+		this.saledate = saledate;
 	}
 
-	public SaleDate(int id, Date date) {
+	public SaleDate(int id, Date saledate) {
 		super();
 		this.id = id;
-		this.date = date;
+		this.saledate = saledate;
 	}
 
 	public int getId() {
@@ -38,17 +38,17 @@ public class SaleDate {
 		this.id = id;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getSaledate() {
+		return saledate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setSaledate(Date saledate) {
+		this.saledate = saledate;
 	}
 
 	@Override
 	public String toString() {
-		return "SaleDate [id=" + id + ", date=" + date + "]";
+		return "SaleDate [id=" + id + ", saledate=" + saledate + "]";
 	}
 
 }

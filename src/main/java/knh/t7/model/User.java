@@ -30,7 +30,7 @@ public class User {
 	private Set<Phone> phones;
 
 	@OneToMany(mappedBy = "user")
-	private Set<Orderx> orderxes;
+	private Set<Order> orders;
 
 	public User() {
 		super();
@@ -43,19 +43,6 @@ public class User {
 		this.fullname = fullname;
 		this.email = email;
 		this.state = state;
-	}
-
-	public User(int id, String username, String password, String fullname, String email, Set<Address> addresses,
-			Set<Phone> phones, Set<Orderx> orderxes) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.fullname = fullname;
-		this.email = email;
-		this.addresses = addresses;
-		this.phones = phones;
-		this.orderxes = orderxes;
 	}
 
 	public User(String username, String password, String fullname, Date birthday, int gender, String email,
@@ -72,8 +59,20 @@ public class User {
 		this.phones = phones;
 	}
 
+	public User(String username, String password, String fullname, String email, Set<Address> addresses,
+			Set<Phone> phones, Set<Order> orders) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.fullname = fullname;
+		this.email = email;
+		this.addresses = addresses;
+		this.phones = phones;
+		this.orders = orders;
+	}
+
 	public User(int id, String username, String password, String fullname, Date birthday, int gender, String email,
-			boolean state, Set<Address> addresses, Set<Phone> phones, Set<Orderx> orderxes) {
+			boolean state, Set<Address> addresses, Set<Phone> phones, Set<Order> orders) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -85,7 +84,7 @@ public class User {
 		this.state = state;
 		this.addresses = addresses;
 		this.phones = phones;
-		this.orderxes = orderxes;
+		this.orders = orders;
 	}
 
 	public int getId() {
@@ -168,12 +167,12 @@ public class User {
 		this.phones = phones;
 	}
 
-	public Set<Orderx> getOrderxes() {
-		return orderxes;
+	public Set<Order> getOrders() {
+		return orders;
 	}
 
-	public void setOrderxes(Set<Orderx> orderxes) {
-		this.orderxes = orderxes;
+	public void setOrders(Set<Order> orders) {
+		this.orders = orders;
 	}
 
 	@Override

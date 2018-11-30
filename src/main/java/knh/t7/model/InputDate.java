@@ -13,21 +13,21 @@ public class InputDate {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private Date date;
+	private Date inputdate;
 
 	public InputDate() {
 		super();
 	}
 
-	public InputDate(Date date) {
+	public InputDate(Date inputdate) {
 		super();
-		this.date = date;
+		this.inputdate = inputdate;
 	}
 
-	public InputDate(int id, Date date) {
+	public InputDate(int id, Date inputdate) {
 		super();
 		this.id = id;
-		this.date = date;
+		this.inputdate = inputdate;
 	}
 
 	public int getId() {
@@ -38,17 +38,17 @@ public class InputDate {
 		this.id = id;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getInputdate() {
+		return inputdate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setInputdate(Date inputdate) {
+		this.inputdate = inputdate;
 	}
 
 	@Override
 	public String toString() {
-		return "InputDate [id=" + id + ", date=" + date + "]";
+		return "InputDate [id=" + id + ", inputdate=" + inputdate + "]";
 	}
 
 }

@@ -18,7 +18,7 @@ public class OrderDetail {
 	private int amount;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Orderx orderx;
+	private Order order;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Book book;
@@ -27,18 +27,18 @@ public class OrderDetail {
 		super();
 	}
 
-	public OrderDetail(int amount, Orderx orderx, Book book) {
+	public OrderDetail(int amount, Order order, Book book) {
 		super();
 		this.amount = amount;
-		this.orderx = orderx;
+		this.order = order;
 		this.book = book;
 	}
 
-	public OrderDetail(int id, int amount, Orderx orderx, Book book) {
+	public OrderDetail(int id, int amount, Order order, Book book) {
 		super();
 		this.id = id;
 		this.amount = amount;
-		this.orderx = orderx;
+		this.order = order;
 		this.book = book;
 	}
 
@@ -58,12 +58,12 @@ public class OrderDetail {
 		this.amount = amount;
 	}
 
-	public Orderx getOrderx() {
-		return orderx;
+	public Order getOrderx() {
+		return order;
 	}
 
-	public void setOrderx(Orderx orderx) {
-		this.orderx = orderx;
+	public void setOrderx(Order order) {
+		this.order = order;
 	}
 
 	public Book getBook() {
@@ -76,7 +76,7 @@ public class OrderDetail {
 
 	@Override
 	public String toString() {
-		return "OrderDetail [id=" + id + ", amount=" + amount + ", orderx=" + orderx + ", book=" + book + "]";
+		return "OrderDetail [id=" + id + ", amount=" + amount + ", orderx=" + order + ", book=" + book + "]";
 	}
 
 }
