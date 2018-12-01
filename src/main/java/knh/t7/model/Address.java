@@ -1,6 +1,7 @@
 package knh.t7.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,9 +14,17 @@ public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@Column(columnDefinition="default 0")
 	private boolean isPrimary;
+	
+	@Column(nullable=false)
 	private String district;
+	
+	@Column(nullable=false)
 	private String street;
+	
+	@Column(nullable=false)
 	private int homenumber;
 
 	@ManyToOne(cascade = CascadeType.ALL)

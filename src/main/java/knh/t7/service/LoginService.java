@@ -13,7 +13,7 @@ public class LoginService {
 	private UserDao userDao;
 	
 	public boolean authenticate(User user) {
-		return userDao.authenticate(user); 
+		return (userDao.authenticate(user) != null); 
 	}
 
 }

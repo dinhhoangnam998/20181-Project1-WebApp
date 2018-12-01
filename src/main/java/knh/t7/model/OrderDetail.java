@@ -1,6 +1,7 @@
 package knh.t7.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,8 @@ public class OrderDetail {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
+	
+	@Column(columnDefinition="default 1")
 	private int amount;
 
 	@ManyToOne(cascade = CascadeType.ALL)

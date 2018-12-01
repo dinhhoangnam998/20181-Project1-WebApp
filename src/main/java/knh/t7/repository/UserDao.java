@@ -1,5 +1,9 @@
 package knh.t7.repository;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -11,13 +15,56 @@ public class UserDao {
 	@Autowired
 	SimpleCrudDao crudDao;
 	
-	public boolean authenticate(User user) {
-		return true;
+	@Autowired
+	SessionFactory factory;
+	
+	
+	// authenticate
+	public User authenticate(User user) {
+		Session session = factory.openSession();
+		Transaction tx = null;
+		User userRet = new User();
+		try {
+			tx = session.beginTransaction();
+			String queryString = "from User where username = :username and password = :password";
+			Query createQuery = session.createQuery(queryString);
+			createQuery.setParameter("username", user.getUsername());
+			createQuery.setParameter("password", user.getPassword());
+			userRet = (User) createQuery.uniqueResult();
+			tx.commit();
+		} catch (Exception e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return userRet;
 	}
 	
-	public boolean registry(User user) {
-		crudDao.create(user);
-		return true;
+	
+	// registry
+	public User registry(User user) {
+		Session session = factory.openSession();
+		Transaction tx = null;
+		User userRet = new User();
+		try {
+			tx = session.beginTransaction();
+			String queryString = "from User where username = :username";
+			Query createQuery = session.createQuery(queryString);
+			createQuery.setParameter("username", user.getUsername());
+			userRet = (User) createQuery.uniqueResult();
+			if( userRet == null)
+				session.save(user);
+			tx.commit();
+		} catch (Exception e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return userRet;
 	}
 	
 }

@@ -19,9 +19,9 @@
 	
 	
 	
-<!-- 	not use yet -->
-<!-- 	<mvc:resources mapping="/resources/**" location="/resources/"  
+<!-- importan, it's use for map resource -->
+	<mvc:resources mapping="/resources/**" location="/resources/"  
 	cache-period="31556926"/>
     <mvc:annotation-driven />
- -->
+
 </beans>

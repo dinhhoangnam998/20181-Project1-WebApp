@@ -13,7 +13,7 @@
 <body>
 	
 	<div align="center">
-	<c:if test="${param['error'] }">Username must be different Password</c:if>
+	<c:if test="${param['error'] }">Incorrect Username, Password or the Username already exits</c:if>
 		<form:form action="userRegistry" method="POST" modelAttribute="user">
 			<table>
 				<tr>

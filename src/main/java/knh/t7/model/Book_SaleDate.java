@@ -1,5 +1,6 @@
 package knh.t7.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +14,10 @@ public class Book_SaleDate {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
+	@Column(nullable=false, columnDefinition="default 0")
 	private int salepercent;
 
+	@Column(nullable=false, columnDefinition="unsigned")
 	private int quantity;
 
 	@OneToOne

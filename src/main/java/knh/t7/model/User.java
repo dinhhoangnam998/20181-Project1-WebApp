@@ -3,11 +3,13 @@ package knh.t7.model;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 public class User {
@@ -15,12 +17,22 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@Column(unique=true, nullable=false)
 	private String username;
+	
+	@Column(nullable=false)
 	private String password;
+	
+	@Column(nullable=false)
 	private String fullname;
 	private Date birthday;
 	private int gender;
+	
+	@Column(nullable=false)
 	private String email;
+	
+	@Column(columnDefinition="default 1")
 	private boolean state;
 
 	@OneToMany(mappedBy = "user")

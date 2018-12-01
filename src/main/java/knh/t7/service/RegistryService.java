@@ -13,7 +13,7 @@ public class RegistryService {
 	private UserDao userDao;
 	
 	public boolean registry(User user) {
-		return userDao.registry(user);
+		return (userDao.registry(user) == null);
 	}
 
 }

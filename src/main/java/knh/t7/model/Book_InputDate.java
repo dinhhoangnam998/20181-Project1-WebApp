@@ -1,6 +1,7 @@
 package knh.t7.model;
 
 import javax.annotation.Generated;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +17,10 @@ public class Book_InputDate {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
+	@Column(nullable=false, columnDefinition="unsigned")
 	private int coverprice;
+	
+	@Column(nullable=false, columnDefinition="unsigned")
 	private int quantity;
 
 	@OneToOne
