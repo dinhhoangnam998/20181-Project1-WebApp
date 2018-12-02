@@ -10,11 +10,8 @@ import org.springframework.stereotype.Repository;
 import knh.t7.model.User;
 
 @Repository
-public class UserDao {
+public class UserDao extends SimpleCrudDao  {
 
-	@Autowired
-	SimpleCrudDao crudDao;
-	
 	@Autowired
 	SessionFactory factory;
 	

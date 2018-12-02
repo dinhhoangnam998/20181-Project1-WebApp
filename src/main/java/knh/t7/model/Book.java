@@ -1,6 +1,7 @@
 package knh.t7.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,87 +17,79 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String summary;
-	private String imagesource;
+
+	@Column(columnDefinition = "varchar(511) default 'no describe'")
+	private String describe;
+
+	@Column(nullable = false)
+	private String language;
+
+	@Column(nullable = false)
 	private int pagenumber;
 	private int republish;
 	private String isbn;
-	private String language;
 	private int width;
 	private int height;
 	private int weight;
 
-	@OneToOne(mappedBy = "book")
-	private OrderDetail orderdetail;
-
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Original original;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private BookType booktype;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Publisher publisher;
 
 	public Book() {
 		super();
 	}
 
-	public Book(Original original) {
-		super();
-		this.original = original;
-	}
-
 	
-	public Book(String summary, int pagenumber, int republish, String language, int width, int height, int weight,
-			Original original, BookType booktype, Publisher publisher) {
+
+	public Book(Original original, BookType booktype, Publisher publisher, String describe, String language,
+			int pagenumber) {
 		super();
-		this.summary = summary;
-		this.pagenumber = pagenumber;
-		this.republish = republish;
-		this.language = language;
-		this.width = width;
-		this.height = height;
-		this.weight = weight;
 		this.original = original;
 		this.booktype = booktype;
 		this.publisher = publisher;
+		this.describe = describe;
+		this.language = language;
+		this.pagenumber = pagenumber;
 	}
 
-	public Book(String summary, String imagesource, int pagenumber, int republish, String isbn, String language,
-			int width, int height, int weight, OrderDetail orderdetail, Original original, BookType booktype,
-			Publisher publisher) {
+
+
+	public Book(Original original, BookType booktype, Publisher publisher, String describe, String language,
+			int pagenumber, int republish, String isbn, int width, int height, int weight) {
 		super();
-		this.summary = summary;
-		this.imagesource = imagesource;
+		this.original = original;
+		this.booktype = booktype;
+		this.publisher = publisher;
+		this.describe = describe;
+		this.language = language;
 		this.pagenumber = pagenumber;
 		this.republish = republish;
 		this.isbn = isbn;
-		this.language = language;
 		this.width = width;
 		this.height = height;
 		this.weight = weight;
-		this.orderdetail = orderdetail;
-		this.original = original;
-		this.booktype = booktype;
-		this.publisher = publisher;
 	}
 
-	public Book(int id, String summary, String imagesource, int pagenumber, int republish, String isbn, String language,
-			int width, int height, int weight, OrderDetail orderdetail, Original original, BookType booktype,
-			Publisher publisher) {
+
+
+	public Book(int id, String describe, String language, int pagenumber, int republish, String isbn, int width,
+			int height, int weight, Original original, BookType booktype, Publisher publisher) {
 		super();
 		this.id = id;
-		this.summary = summary;
-		this.imagesource = imagesource;
+		this.describe = describe;
+		this.language = language;
 		this.pagenumber = pagenumber;
 		this.republish = republish;
 		this.isbn = isbn;
-		this.language = language;
 		this.width = width;
 		this.height = height;
 		this.weight = weight;
-		this.orderdetail = orderdetail;
 		this.original = original;
 		this.booktype = booktype;
 		this.publisher = publisher;
@@ -110,20 +103,20 @@ public class Book {
 		this.id = id;
 	}
 
-	public String getSummary() {
-		return summary;
+	public String getDescribe() {
+		return describe;
 	}
 
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setDescribe(String describe) {
+		this.describe = describe;
 	}
 
-	public String getImagesource() {
-		return imagesource;
+	public String getLanguage() {
+		return language;
 	}
 
-	public void setImagesource(String imagesource) {
-		this.imagesource = imagesource;
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 	public int getPagenumber() {
@@ -150,14 +143,6 @@ public class Book {
 		this.isbn = isbn;
 	}
 
-	public String getLanguage() {
-		return language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
-	}
-
 	public int getWidth() {
 		return width;
 	}
@@ -180,14 +165,6 @@ public class Book {
 
 	public void setWeight(int weight) {
 		this.weight = weight;
-	}
-
-	public OrderDetail getOrderdetail() {
-		return orderdetail;
-	}
-
-	public void setOrderdetail(OrderDetail orderdetail) {
-		this.orderdetail = orderdetail;
 	}
 
 	public Original getOriginal() {
@@ -216,9 +193,8 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", original=" + original + ", isbn=" + isbn + ", booktype=" + booktype
-				+ ", publisher=" + publisher + ", pagenumber=" + pagenumber + ", width=" + width + ", weight=" + weight
-				+ ", height=" + height + "]";
+		return "Book [id=" + id + ", describe=" + describe + ", original=" + original + ", publisher=" + publisher
+				+ "]";
 	}
 
 }

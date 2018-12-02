@@ -33,13 +33,15 @@ public class Book_InputDate {
 		super();
 	}
 
-	public Book_InputDate(int coverprice, int quantity, Book book, InputDate inputdate) {
+
+	public Book_InputDate(Book book, InputDate inputdate, int coverprice, int quantity) {
 		super();
-		this.coverprice = coverprice;
-		this.quantity = quantity;
 		this.book = book;
 		this.inputdate = inputdate;
+		this.coverprice = coverprice;
+		this.quantity = quantity;
 	}
+
 
 	public Book_InputDate(int id, int coverprice, int quantity, Book book, InputDate inputdate) {
 		super();

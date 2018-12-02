@@ -20,47 +20,39 @@ public class Original {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-	@Column(unique=true)
+
+	@Column(unique = true, nullable = false)
 	private String name;
-	private Date date;
+	private Date releasedate;
 
-	@OneToMany(mappedBy = "original")
-	private Set<Book> books;
-
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Author author;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	private Set<Category> categories;
 
 	public Original() {
 		super();
 	}
 
-	public Original(String name, Date date, Author author) {
+	public Original(String name, Author author) {
 		super();
 		this.name = name;
-		this.date = date;
 		this.author = author;
 	}
-	
-	
 
-	public Original(String name, Date date, Author author, Set<Category> categories) {
+	public Original(String name, Author author, Set<Category> categories) {
 		super();
 		this.name = name;
-		this.date = date;
 		this.author = author;
 		this.categories = categories;
 	}
 
-	public Original(int id, String name, Date date, Set<Book> books, Author author, Set<Category> categories) {
+	public Original(int id, String name, Date releasedate, Author author, Set<Category> categories) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.date = date;
-		this.books = books;
+		this.releasedate = releasedate;
 		this.author = author;
 		this.categories = categories;
 	}
@@ -81,20 +73,12 @@ public class Original {
 		this.name = name;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getReleasedate() {
+		return releasedate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public Set<Book> getBooks() {
-		return books;
-	}
-
-	public void setBooks(Set<Book> books) {
-		this.books = books;
+	public void setReleasedate(Date releasedate) {
+		this.releasedate = releasedate;
 	}
 
 	public Author getAuthor() {
@@ -115,7 +99,8 @@ public class Original {
 
 	@Override
 	public String toString() {
-		return "Original [id=" + id + ", name=" + name + ", date=" + date + ", author=" + author + "]";
+		return "Original [id=" + id + ", name=" + name + ", releasedate=" + releasedate + ", author=" + author
+				+ ", categories=" + categories + "]";
 	}
 
 }

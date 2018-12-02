@@ -16,14 +16,11 @@ public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-	@Column(unique=true)
+
+	@Column(unique = true, nullable = false)
 	private String name;
 	private Date birthday;
-	private String imagesource;
-
-	@OneToMany(mappedBy = "author")
-	private Set<Original> originals;
+	private String describe;
 
 	public Author() {
 		super();
@@ -34,26 +31,19 @@ public class Author {
 		this.name = name;
 	}
 
-	public Author(String name, Date birthday) {
+	public Author(String name, Date birthday, String describe) {
 		super();
 		this.name = name;
 		this.birthday = birthday;
+		this.describe = describe;
 	}
 
-	public Author(String name, Date birthday, String imagesource) {
-		super();
-		this.name = name;
-		this.birthday = birthday;
-		this.imagesource = imagesource;
-	}
-
-	public Author(int id, String name, Date birthday, String imagesource, Set<Original> originals) {
+	public Author(int id, String name, Date birthday, String describe) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.birthday = birthday;
-		this.imagesource = imagesource;
-		this.originals = originals;
+		this.describe = describe;
 	}
 
 	public int getId() {
@@ -80,25 +70,17 @@ public class Author {
 		this.birthday = birthday;
 	}
 
-	public String getImagesource() {
-		return imagesource;
+	public String getDescribe() {
+		return describe;
 	}
 
-	public void setImagesource(String imagesource) {
-		this.imagesource = imagesource;
-	}
-
-	public Set<Original> getOriginals() {
-		return originals;
-	}
-
-	public void setOriginals(Set<Original> originals) {
-		this.originals = originals;
+	public void setDescribe(String describe) {
+		this.describe = describe;
 	}
 
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", name=" + name + ", birthday=" + birthday + ", imagesource=" + imagesource + "]";
+		return "Author [id=" + id + ", name=" + name + ", birthday=" + birthday + "]";
 	}
 
 }

@@ -18,111 +18,63 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-	@Column(unique=true, nullable=false)
+
+	@Column(unique = true, nullable = false)
 	private String username;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String password;
-	
-	@Column(nullable=false)
-	private String fullname;
-	private Date birthday;
-	private int gender;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String email;
-	
-	@Column(columnDefinition="bit(1) default 1")
-	private boolean state;
 
-	@OneToMany(mappedBy = "user", cascade=CascadeType.ALL)
-	private Set<Address> addresses;
+	@Column(nullable = false)
+	private String fullname;
 
-	@OneToMany(mappedBy = "user", cascade=CascadeType.ALL)
-	private Set<Phone> phones;
+	private int gender;
+	private Date birthday;
 
-	@OneToMany(mappedBy = "user", cascade=CascadeType.ALL)
-	private Set<Order> orders;
+	@Column(columnDefinition = "int default 1")
+	private int state;
 
 	public User() {
 		super();
 	}
 
-	
-	
-
-
-
-
-	public User(String username, String password) {
+	public User(String username, String password, String email, String fullname) {
 		super();
 		this.username = username;
 		this.password = password;
-	}
-
-
-
-
-
-
-
-	public User(String username, String password, String fullname, String email) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.fullname = fullname;
 		this.email = email;
+		this.fullname = fullname;
 	}
 
-
-
-
-
-
-
-	public User(String username, String password, String fullname, Date birthday, int gender, String email,
-			boolean state, Set<Address> addresses, Set<Phone> phones, Set<Order> orders) {
+	public User(String username, String password, String email, String fullname, int gender, Date birthday, int state) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.email = email;
 		this.fullname = fullname;
-		this.birthday = birthday;
 		this.gender = gender;
-		this.email = email;
+		this.birthday = birthday;
 		this.state = state;
-		this.addresses = addresses;
-		this.phones = phones;
-		this.orders = orders;
 	}
 
-
-
-
-
-
-
-	public User(int id, String username, String password, String fullname, Date birthday, int gender, String email,
-			boolean state, Set<Address> addresses, Set<Phone> phones, Set<Order> orders) {
+	public User(int id, String username, String password, String email, String fullname, int gender, Date birthday,
+			int state, Set<Address> addresses, Set<Phone> phones, Set<Order> orders) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.fullname = fullname;
-		this.birthday = birthday;
-		this.gender = gender;
 		this.email = email;
+		this.fullname = fullname;
+		this.gender = gender;
+		this.birthday = birthday;
 		this.state = state;
 		this.addresses = addresses;
 		this.phones = phones;
 		this.orders = orders;
 	}
-
-
-
-
-
-
 
 	public int getId() {
 		return id;
@@ -148,20 +100,20 @@ public class User {
 		this.password = password;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getFullname() {
 		return fullname;
 	}
 
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
-	}
-
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
 	}
 
 	public int getGender() {
@@ -172,19 +124,19 @@ public class User {
 		this.gender = gender;
 	}
 
-	public String getEmail() {
-		return email;
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
-	public boolean isState() {
+	public int getState() {
 		return state;
 	}
 
-	public void setState(boolean state) {
+	public void setState(int state) {
 		this.state = state;
 	}
 
@@ -214,8 +166,18 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", fullname=" + fullname + ", birthday=" + birthday
-				+ ", state=" + state + "]";
+		return "User [id=" + id + ", username=" + username + ", email=" + email + ", fullname=" + fullname + ", gender="
+				+ gender + ", state=" + state + "]";
 	}
+
+	// just for query, don't touch it
+	@OneToMany(mappedBy = "user")
+	private Set<Address> addresses;
+
+	@OneToMany(mappedBy = "user")
+	private Set<Phone> phones;
+
+	@OneToMany(mappedBy = "user")
+	private Set<Order> orders;
 
 }

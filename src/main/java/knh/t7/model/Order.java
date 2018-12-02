@@ -14,37 +14,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Orderx")
+@Table(name = "Orderx")
 public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-	@Column(columnDefinition="datetime default now()")
+
+	@Column(columnDefinition = "datetime default now()")
 	private Date orderdate;
-	
-	@Column(columnDefinition="int default 0")
+
+	@Column(columnDefinition = "int default 0")
 	private int state;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private User user;
-
-	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-	private Set<OrderDetail> orderdetails;
 
 	public Order() {
 		super();
 	}
-	
-	
-
-	public Order(Date orderdate) {
-		super();
-		this.orderdate = orderdate;
-	}
-
-
 
 	public Order(User user) {
 		super();
@@ -52,29 +40,11 @@ public class Order {
 	}
 
 
-
-	public Order(Date orderdate, User user) {
+	public Order(User user, Date orderdate, int state) {
 		super();
-		this.orderdate = orderdate;
 		this.user = user;
-	}
-	
-
-	public Order(Date orderdate, Set<OrderDetail> orderdetails) {
-		super();
-		this.orderdate = orderdate;
-		this.orderdetails = orderdetails;
-	}
-
-
-
-	public Order(int id, Date orderdate, int state, User user, Set<OrderDetail> orderdetails) {
-		super();
-		this.id = id;
 		this.orderdate = orderdate;
 		this.state = state;
-		this.user = user;
-		this.orderdetails = orderdetails;
 	}
 
 	public int getId() {
@@ -107,14 +77,6 @@ public class Order {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public Set<OrderDetail> getOrderdetails() {
-		return orderdetails;
-	}
-
-	public void setOrderdetails(Set<OrderDetail> orderdetails) {
-		this.orderdetails = orderdetails;
 	}
 
 	@Override

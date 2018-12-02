@@ -15,7 +15,7 @@ public class SimpleCrudDao {
 	public SessionFactory factory;
 
 	// create
-	public <T> void create(T t) {
+	public <T> void save(T t) {
 		Session session = factory.openSession();
 		Transaction tx = null;
 		try {
@@ -33,7 +33,7 @@ public class SimpleCrudDao {
 	}
 
 	// read
-	public Object read(Class clazz, Serializable id) {
+	public Object get(Class clazz, Serializable id) {
 		Session session = factory.openSession();
 		Transaction tx = null;
 		Object obj = new Object();

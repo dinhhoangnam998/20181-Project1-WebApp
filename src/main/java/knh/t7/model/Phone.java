@@ -15,24 +15,17 @@ public class Phone {
 	private int id;
 	private String phonenumber;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private User user;
 
 	public Phone() {
 		super();
 	}
 
-	
-	public Phone(String phonenumber) {
+	public Phone(User user, String phonenumber) {
 		super();
-		this.phonenumber = phonenumber;
-	}
-
-
-	public Phone(String phonenumber, User user) {
-		super();
-		this.phonenumber = phonenumber;
 		this.user = user;
+		this.phonenumber = phonenumber;
 	}
 
 	public Phone(int id, String phonenumber, User user) {
@@ -68,7 +61,8 @@ public class Phone {
 
 	@Override
 	public String toString() {
-		return "Phone [id=" + id + ", phonenumber=" + phonenumber + ", user=" + user + "]";
+		return "Phone [id=" + id + ", user=" + user + ", phonenumber=" + phonenumber + "]";
 	}
 
+	
 }

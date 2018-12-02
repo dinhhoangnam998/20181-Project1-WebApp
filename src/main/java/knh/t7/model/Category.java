@@ -15,27 +15,18 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-	@Column(unique=true)
-	private String name;
 
-	@ManyToMany(mappedBy = "categories")
-	private Set<Original> originals;
+	@Column(unique = true, nullable = false)
+	private String name;
 
 	public Category() {
 		super();
 	}
 
-	public Category(String name) {
-		super();
-		this.name = name;
-	}
-
-	public Category(int id, String name, Set<Original> originals) {
+	public Category(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.originals = originals;
 	}
 
 	public int getId() {
@@ -52,14 +43,6 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Set<Original> getOriginals() {
-		return originals;
-	}
-
-	public void setOriginals(Set<Original> originals) {
-		this.originals = originals;
 	}
 
 	@Override

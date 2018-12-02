@@ -15,12 +15,9 @@ public class BookType {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-	@Column(unique=true)
-	private String name;
 
-	@OneToMany(mappedBy = "booktype")
-	private Set<Book> books;
+	@Column(unique = true, nullable = false)
+	private String name;
 
 	public BookType() {
 		super();
@@ -31,11 +28,10 @@ public class BookType {
 		this.name = name;
 	}
 
-	public BookType(int id, String name, Set<Book> books) {
+	public BookType(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.books = books;
 	}
 
 	public int getId() {
@@ -52,14 +48,6 @@ public class BookType {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Set<Book> getBooks() {
-		return books;
-	}
-
-	public void setBooks(Set<Book> books) {
-		this.books = books;
 	}
 
 	@Override

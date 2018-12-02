@@ -14,7 +14,7 @@ public class Book_SaleDate {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(nullable=false, columnDefinition="int default 0")
+	@Column(columnDefinition="int unsigned default 0")
 	private int salepercent;
 
 	@Column(nullable=false, columnDefinition="int unsigned")
@@ -30,13 +30,15 @@ public class Book_SaleDate {
 		super();
 	}
 
-	public Book_SaleDate(int salepercent, int quantity, SaleDate saledate, Book book) {
+
+	public Book_SaleDate(Book book, SaleDate saledate, int salepercent, int quantity) {
 		super();
+		this.book = book;
+		this.saledate = saledate;
 		this.salepercent = salepercent;
 		this.quantity = quantity;
-		this.saledate = saledate;
-		this.book = book;
 	}
+
 
 	public Book_SaleDate(int id, int salepercent, int quantity, SaleDate saledate, Book book) {
 		super();
