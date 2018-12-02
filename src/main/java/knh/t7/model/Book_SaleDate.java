@@ -14,10 +14,10 @@ public class Book_SaleDate {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(nullable=false, columnDefinition="default 0")
+	@Column(nullable=false, columnDefinition="int default 0")
 	private int salepercent;
 
-	@Column(nullable=false, columnDefinition="unsigned")
+	@Column(nullable=false, columnDefinition="int unsigned")
 	private int quantity;
 
 	@OneToOne

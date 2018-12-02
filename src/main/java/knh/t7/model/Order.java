@@ -14,34 +14,59 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="orderx")
+@Table(name="Orderx")
 public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@Column(columnDefinition="default now()")
+	@Column(columnDefinition="datetime default now()")
 	private Date orderdate;
 	
-	@Column(columnDefinition="default 0")
+	@Column(columnDefinition="int default 0")
 	private int state;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private User user;
 
-	@OneToMany(mappedBy = "order")
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private Set<OrderDetail> orderdetails;
 
 	public Order() {
 		super();
 	}
+	
+	
+
+	public Order(Date orderdate) {
+		super();
+		this.orderdate = orderdate;
+	}
+
+
+
+	public Order(User user) {
+		super();
+		this.user = user;
+	}
+
+
 
 	public Order(Date orderdate, User user) {
 		super();
 		this.orderdate = orderdate;
 		this.user = user;
 	}
+	
+
+	public Order(Date orderdate, Set<OrderDetail> orderdetails) {
+		super();
+		this.orderdate = orderdate;
+		this.orderdetails = orderdetails;
+	}
+
+
 
 	public Order(int id, Date orderdate, int state, User user, Set<OrderDetail> orderdetails) {
 		super();

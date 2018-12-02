@@ -9,7 +9,7 @@
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/project1webappdb"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/project1webappdb?useSSL=false"></property>
 		<property name="username" value="username"></property>
 		<property name="password" value="password"></property>
 	</bean>
@@ -20,7 +20,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 		<property name="packagesToScan" value="knh.t7.model"></property>

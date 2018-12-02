@@ -15,8 +15,11 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@Column(columnDefinition="default 0")
+	@Column(columnDefinition="bit(1) default 0")
 	private boolean isPrimary;
+	
+	@Column(nullable=false)
+	private String city;
 	
 	@Column(nullable=false)
 	private String district;
@@ -25,7 +28,7 @@ public class Address {
 	private String street;
 	
 	@Column(nullable=false)
-	private int homenumber;
+	private String homenumber;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private User user;
@@ -34,39 +37,42 @@ public class Address {
 		super();
 	}
 
-	public Address(String district, String street, int homenumber) {
+	
+
+	public Address(String city, String district, String street, String homenumber) {
 		super();
+		this.city = city;
 		this.district = district;
 		this.street = street;
 		this.homenumber = homenumber;
 	}
 
-	public Address(boolean isPrimary, String district, String street, int homenumber) {
-		super();
-		this.isPrimary = isPrimary;
-		this.district = district;
-		this.street = street;
-		this.homenumber = homenumber;
-	}
 
-	public Address(boolean isPrimary, String district, String street, int homenumber, User user) {
+
+	public Address(boolean isPrimary, String city, String district, String street, String homenumber) {
 		super();
 		this.isPrimary = isPrimary;
+		this.city = city;
 		this.district = district;
 		this.street = street;
 		this.homenumber = homenumber;
-		this.user = user;
 	}
 
-	public Address(int id, boolean isPrimary, String district, String street, int homenumber, User user) {
+
+
+	public Address(int id, boolean isPrimary, String city, String district, String street, String homenumber,
+			User user) {
 		super();
 		this.id = id;
 		this.isPrimary = isPrimary;
+		this.city = city;
 		this.district = district;
 		this.street = street;
 		this.homenumber = homenumber;
 		this.user = user;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -82,6 +88,15 @@ public class Address {
 
 	public void setPrimary(boolean isPrimary) {
 		this.isPrimary = isPrimary;
+	}
+
+	
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	public String getDistrict() {
@@ -100,11 +115,11 @@ public class Address {
 		this.street = street;
 	}
 
-	public int getHomenumber() {
+	public String getHomenumber() {
 		return homenumber;
 	}
 
-	public void setHomenumber(int homenumber) {
+	public void setHomenumber(String homenumber) {
 		this.homenumber = homenumber;
 	}
 
@@ -118,8 +133,8 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", isPrimary=" + isPrimary + ", district=" + district + ", street=" + street
-				+ ", homenumber=" + homenumber + ", user=" + user + "]";
+		return "Address [id=" + id + ", isPrimary=" + isPrimary + ", city=" + city + ", district=" + district
+				+ ", street=" + street + ", homenumber=" + homenumber + "]";
 	}
 
 }

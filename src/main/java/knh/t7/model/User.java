@@ -3,6 +3,7 @@ package knh.t7.model;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,16 +33,16 @@ public class User {
 	@Column(nullable=false)
 	private String email;
 	
-	@Column(columnDefinition="default 1")
+	@Column(columnDefinition="bit(1) default 1")
 	private boolean state;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade=CascadeType.ALL)
 	private Set<Address> addresses;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade=CascadeType.ALL)
 	private Set<Phone> phones;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade=CascadeType.ALL)
 	private Set<Order> orders;
 
 	public User() {
@@ -49,7 +50,11 @@ public class User {
 	}
 
 	
-	// just for test
+	
+
+
+
+
 	public User(String username, String password) {
 		super();
 		this.username = username;
@@ -58,17 +63,26 @@ public class User {
 
 
 
-	public User(String username, String password, String fullname, String email, boolean state) {
+
+
+
+
+	public User(String username, String password, String fullname, String email) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.fullname = fullname;
 		this.email = email;
-		this.state = state;
 	}
 
+
+
+
+
+
+
 	public User(String username, String password, String fullname, Date birthday, int gender, String email,
-			boolean state, Set<Address> addresses, Set<Phone> phones) {
+			boolean state, Set<Address> addresses, Set<Phone> phones, Set<Order> orders) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -79,19 +93,14 @@ public class User {
 		this.state = state;
 		this.addresses = addresses;
 		this.phones = phones;
-	}
-
-	public User(String username, String password, String fullname, String email, Set<Address> addresses,
-			Set<Phone> phones, Set<Order> orders) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.fullname = fullname;
-		this.email = email;
-		this.addresses = addresses;
-		this.phones = phones;
 		this.orders = orders;
 	}
+
+
+
+
+
+
 
 	public User(int id, String username, String password, String fullname, Date birthday, int gender, String email,
 			boolean state, Set<Address> addresses, Set<Phone> phones, Set<Order> orders) {
@@ -108,6 +117,12 @@ public class User {
 		this.phones = phones;
 		this.orders = orders;
 	}
+
+
+
+
+
+
 
 	public int getId() {
 		return id;

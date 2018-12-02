@@ -47,6 +47,22 @@ public class Book {
 		this.original = original;
 	}
 
+	
+	public Book(String summary, int pagenumber, int republish, String language, int width, int height, int weight,
+			Original original, BookType booktype, Publisher publisher) {
+		super();
+		this.summary = summary;
+		this.pagenumber = pagenumber;
+		this.republish = republish;
+		this.language = language;
+		this.width = width;
+		this.height = height;
+		this.weight = weight;
+		this.original = original;
+		this.booktype = booktype;
+		this.publisher = publisher;
+	}
+
 	public Book(String summary, String imagesource, int pagenumber, int republish, String isbn, String language,
 			int width, int height, int weight, OrderDetail orderdetail, Original original, BookType booktype,
 			Publisher publisher) {

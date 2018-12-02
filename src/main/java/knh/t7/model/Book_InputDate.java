@@ -17,10 +17,10 @@ public class Book_InputDate {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(nullable=false, columnDefinition="unsigned")
+	@Column(nullable=false, columnDefinition="int unsigned")
 	private int coverprice;
 	
-	@Column(nullable=false, columnDefinition="unsigned")
+	@Column(nullable=false, columnDefinition="int unsigned")
 	private int quantity;
 
 	@OneToOne

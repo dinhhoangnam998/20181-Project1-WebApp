@@ -44,6 +44,16 @@ public class Original {
 		this.date = date;
 		this.author = author;
 	}
+	
+	
+
+	public Original(String name, Date date, Author author, Set<Category> categories) {
+		super();
+		this.name = name;
+		this.date = date;
+		this.author = author;
+		this.categories = categories;
+	}
 
 	public Original(int id, String name, Date date, Set<Book> books, Author author, Set<Category> categories) {
 		super();

@@ -22,6 +22,13 @@ public class Phone {
 		super();
 	}
 
+	
+	public Phone(String phonenumber) {
+		super();
+		this.phonenumber = phonenumber;
+	}
+
+
 	public Phone(String phonenumber, User user) {
 		super();
 		this.phonenumber = phonenumber;

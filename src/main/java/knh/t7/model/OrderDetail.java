@@ -17,7 +17,7 @@ public class OrderDetail {
 	private int id;
 
 	
-	@Column(columnDefinition="default 1")
+	@Column(columnDefinition="int default 1")
 	private int amount;
 
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -29,6 +29,16 @@ public class OrderDetail {
 	public OrderDetail() {
 		super();
 	}
+
+	
+	
+	public OrderDetail(int amount, Book book) {
+		super();
+		this.amount = amount;
+		this.book = book;
+	}
+
+
 
 	public OrderDetail(int amount, Order order, Book book) {
 		super();
