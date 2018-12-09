@@ -3,14 +3,12 @@ package knh.t7.model;
 import java.util.Date;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstraint;
 
 @Entity
 public class User {
@@ -19,7 +17,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(unique = true, nullable = false)
+	@Column(nullable = false, unique = true)
 	private String username;
 
 	@Column(nullable = false)
@@ -30,12 +28,20 @@ public class User {
 
 	@Column(nullable = false)
 	private String fullname;
-
 	private int gender;
 	private Date birthday;
 
 	@Column(columnDefinition = "int default 1")
 	private int state;
+
+	@OneToMany(mappedBy = "user")
+	private Set<Address> address;
+
+	@OneToMany(mappedBy = "user")
+	private Set<Phone> phone;
+
+	@OneToMany(mappedBy = "user")
+	private Set<Bill> bill;
 
 	public User() {
 		super();
@@ -61,7 +67,7 @@ public class User {
 	}
 
 	public User(int id, String username, String password, String email, String fullname, int gender, Date birthday,
-			int state, Set<Address> addresses, Set<Phone> phones, Set<Order> orders) {
+			int state) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -71,9 +77,6 @@ public class User {
 		this.gender = gender;
 		this.birthday = birthday;
 		this.state = state;
-		this.addresses = addresses;
-		this.phones = phones;
-		this.orders = orders;
 	}
 
 	public int getId() {
@@ -140,44 +143,35 @@ public class User {
 		this.state = state;
 	}
 
-	public Set<Address> getAddresses() {
-		return addresses;
+	public Set<Address> getAddress() {
+		return address;
 	}
 
-	public void setAddresses(Set<Address> addresses) {
-		this.addresses = addresses;
+	public void setAddress(Set<Address> address) {
+		this.address = address;
 	}
 
-	public Set<Phone> getPhones() {
-		return phones;
+	public Set<Phone> getPhone() {
+		return phone;
 	}
 
-	public void setPhones(Set<Phone> phones) {
-		this.phones = phones;
+	public void setPhone(Set<Phone> phone) {
+		this.phone = phone;
 	}
 
-	public Set<Order> getOrders() {
-		return orders;
+	public Set<Bill> getBill() {
+		return bill;
 	}
 
-	public void setOrders(Set<Order> orders) {
-		this.orders = orders;
+	public void setBill(Set<Bill> bill) {
+		this.bill = bill;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", email=" + email + ", fullname=" + fullname + ", gender="
-				+ gender + ", state=" + state + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
+				+ ", fullname=" + fullname + ", gender=" + gender + ", birthday=" + birthday + ", state=" + state
+				+ ", address=" + address + ", phone=" + phone + ", bill=" + bill + "]";
 	}
-
-	// just for query, don't touch it
-	@OneToMany(mappedBy = "user")
-	private Set<Address> addresses;
-
-	@OneToMany(mappedBy = "user")
-	private Set<Phone> phones;
-
-	@OneToMany(mappedBy = "user")
-	private Set<Order> orders;
 
 }

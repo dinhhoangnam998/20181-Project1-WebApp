@@ -1,22 +1,18 @@
 package knh.t7.model;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Publisher {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(unique = true, nullable = false)
+	@Column(nullable = false, unique = true)
 	private String name;
 	private String city;
 	private String district;
@@ -25,11 +21,6 @@ public class Publisher {
 
 	public Publisher() {
 		super();
-	}
-
-	public Publisher(String name) {
-		super();
-		this.name = name;
 	}
 
 	public Publisher(String name, String city, String district, String street, String homenumber) {

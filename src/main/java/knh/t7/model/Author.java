@@ -1,49 +1,53 @@
 package knh.t7.model;
 
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Author {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(unique = true, nullable = false)
+	@Column(nullable = false, unique = true)
 	private String name;
 	private Date birthday;
-	private String describe;
+	private Date deathday;
+	private String description;
+	private String imageurl;
 
 	public Author() {
 		super();
 	}
 
-	public Author(String name) {
-		super();
-		this.name = name;
-	}
-
-	public Author(String name, Date birthday, String describe) {
+	public Author(String name, Date birthday) {
 		super();
 		this.name = name;
 		this.birthday = birthday;
-		this.describe = describe;
 	}
 
-	public Author(int id, String name, Date birthday, String describe) {
+	public Author(String name, Date birthday, Date deathday, String description, String imageurl) {
+		super();
+		this.name = name;
+		this.birthday = birthday;
+		this.deathday = deathday;
+		this.description = description;
+		this.imageurl = imageurl;
+	}
+
+	public Author(int id, String name, Date birthday, Date deathday, String description, String imageurl) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.birthday = birthday;
-		this.describe = describe;
+		this.deathday = deathday;
+		this.description = description;
+		this.imageurl = imageurl;
 	}
 
 	public int getId() {
@@ -70,17 +74,34 @@ public class Author {
 		this.birthday = birthday;
 	}
 
-	public String getDescribe() {
-		return describe;
+	public Date getDeathday() {
+		return deathday;
 	}
 
-	public void setDescribe(String describe) {
-		this.describe = describe;
+	public void setDeathday(Date deathday) {
+		this.deathday = deathday;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getImageurl() {
+		return imageurl;
+	}
+
+	public void setImageurl(String imageurl) {
+		this.imageurl = imageurl;
 	}
 
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", name=" + name + ", birthday=" + birthday + "]";
+		return "Author [id=" + id + ", name=" + name + ", birthday=" + birthday + ", deathday=" + deathday
+				+ ", description=" + description + ", imageurl=" + imageurl + "]";
 	}
 
 }

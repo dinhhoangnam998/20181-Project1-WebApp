@@ -1,6 +1,5 @@
 package knh.t7.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +8,6 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Phone {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -22,10 +20,10 @@ public class Phone {
 		super();
 	}
 
-	public Phone(User user, String phonenumber) {
+	public Phone(String phonenumber, User user) {
 		super();
-		this.user = user;
 		this.phonenumber = phonenumber;
+		this.user = user;
 	}
 
 	public Phone(int id, String phonenumber, User user) {
@@ -61,8 +59,7 @@ public class Phone {
 
 	@Override
 	public String toString() {
-		return "Phone [id=" + id + ", user=" + user + ", phonenumber=" + phonenumber + "]";
+		return "Phone [id=" + id + ", phonenumber=" + phonenumber + ", user=" + user + "]";
 	}
 
-	
 }

@@ -1,6 +1,5 @@
 package knh.t7.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,25 +9,12 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Address {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(columnDefinition = "int default 0")
-	private int isprimary;
-
 	@Column(nullable = false)
-	private String city;
-
-	@Column(nullable = false)
-	private String district;
-
-	@Column(nullable = false)
-	private String street;
-
-	@Column(nullable = false)
-	private String homenumber;
+	private String address;
 
 	@ManyToOne
 	private User user;
@@ -37,23 +23,16 @@ public class Address {
 		super();
 	}
 
-	public Address(User user, String city, String district, String street, String homenumber) {
+	public Address(String address, User user) {
 		super();
+		this.address = address;
 		this.user = user;
-		this.city = city;
-		this.district = district;
-		this.street = street;
-		this.homenumber = homenumber;
 	}
 
-	public Address(int id, int isprimary, String city, String district, String street, String homenumber, User user) {
+	public Address(int id, String address, User user) {
 		super();
 		this.id = id;
-		this.isprimary = isprimary;
-		this.city = city;
-		this.district = district;
-		this.street = street;
-		this.homenumber = homenumber;
+		this.address = address;
 		this.user = user;
 	}
 
@@ -65,44 +44,12 @@ public class Address {
 		this.id = id;
 	}
 
-	public int getIsprimary() {
-		return isprimary;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setIsprimary(int isprimary) {
-		this.isprimary = isprimary;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(String district) {
-		this.district = district;
-	}
-
-	public String getStreet() {
-		return street;
-	}
-
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	public String getHomenumber() {
-		return homenumber;
-	}
-
-	public void setHomenumber(String homenumber) {
-		this.homenumber = homenumber;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public User getUser() {
@@ -115,10 +62,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [user=" + user + ", id=" + id + ", isprimary=" + isprimary + ", city=" + city + ", district="
-				+ district + ", street=" + street + ", homenumber=" + homenumber + "]";
+		return "Address [id=" + id + ", address=" + address + ", user=" + user + "]";
 	}
-	
-	
 
 }
