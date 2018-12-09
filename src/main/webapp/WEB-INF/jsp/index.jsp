@@ -51,17 +51,17 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="signin">Sign In</a>
+                    <a class="nav-link link text-white display-4" href="showsignin">Sign In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="signup">Sign Up</a>
+                    <a class="nav-link link text-white display-4" href="showsignup">Sign Up</a>
                 </li></ul>
             
         </div>
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info">Mobirise</a></section><section class="mbr-section content5 cid-rb5ocFcYg3 mbr-parallax-background" id="content5-f">
+<section class="engine"><a href="https://mobirise.info/t">free amp template</a></section><section class="mbr-section content5 cid-rb5ocFcYg3 mbr-parallax-background" id="content5-f">
 
     
 
@@ -100,7 +100,7 @@
                             Mobirise is an easy website builder - just drop site elements to your page, add content and style it to look the way you like.
                         </p>
                     </div>
-                    <div class="mbr-section-btn text-center"><a href="bookinfo" class="btn btn-primary display-4">
+                    <div class="mbr-section-btn text-center"><a href="showbookinfo" class="btn btn-primary display-4">
                             Learn More
                         </a></div>
                 </div>
@@ -275,7 +275,7 @@
                     </div>
 
                     <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
-                        <input type="hidden" value="bcDTYmkiMn6ekAq452QpWCkPUy4Ljaq/OuCnnMGXyCFIyK/+6hjddfbzrGDIyGUu8b8UibnSGrOIypS7l0Tz7OKjT6azIZ7585HB9n2dw3tR0I4hS/lDT0BnIeRX1s33" data-form-email="true">
+                        <input type="hidden" value="OHodnwmnySeaxLetiHhjt3gi1dJKWDGJMjCznqcBidtUOtsOBuwOMN1EEKgr7lqzxy9p3j2WQuDUmlBOwRmgrT7e8vwPfna1zq0sE8/9IixO7VpLxZSbHnP0vzVdhwEW" data-form-email="true">
                         <div class="form-group">
                             <input type="email" class="form-control input-sm input-inverse my-2" name="email" required="" data-form-field="Email" placeholder="Email" id="email-footer4-15">
                         </div>

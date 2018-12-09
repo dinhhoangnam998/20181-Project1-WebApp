@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BookInfo {
 	
-	@GetMapping("bookinfo")
+	@GetMapping("showbookinfo")
 	public String showBookInfo() {
-		return "book/bookinfo";
+		return "book/showbookinfo";
 	}
 
 }

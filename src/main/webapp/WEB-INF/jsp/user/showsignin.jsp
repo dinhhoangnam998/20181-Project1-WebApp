@@ -51,17 +51,17 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="signin">Sign In</a>
+                    <a class="nav-link link text-white display-4" href="showsignin">Sign In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="signup">Sign Up</a>
+                    <a class="nav-link link text-white display-4" href="showsignup">Sign Up</a>
                 </li></ul>
             
         </div>
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/m">free website design templates</a></section><section class="cid-rb5Daq7KkO mbr-fullscreen mbr-parallax-background" id="header15-v">
+<section class="engine"><a href="https://mobirise.info/y">free html site templates</a></section><section class="cid-rb5Daq7KkO mbr-fullscreen mbr-parallax-background" id="header15-v">
 
     
 
@@ -81,20 +81,20 @@
     <div class="form-container">
         <div class="media-container-column" data-form-type="formoid">
             
-            <form class="mbr-form" action="/authenticate" method="post">
-                <div data-for="name">
+            <form class="mbr-form" action="signin" method="post">
+                <div>
                     <div class="form-group">
-                        <input type="text" class="form-control px-3" name="name" data-form-field="Name" placeholder="Username" required="" id="name-header15-v">
+                        <input type="text" class="form-control px-3" name="username" placeholder="Username">
                     </div>
                 </div>
-                <div data-for="email">
+                <div>
                     <div class="form-group">
-                        <input type="email" class="form-control px-3" name="email" data-form-field="Email" placeholder="Password" required="" id="email-header15-v">
+                        <input type="password" class="form-control px-3" name="password"  placeholder="Password">
                     </div>
                 </div>
                 
                 
-                <span class="input-group-btn"><button href="" type="submit" class="btn btn-secondary btn-form display-4">Login<br></button></span>
+                <span class="input-group-btn"><button href="" type="submit" class="btn btn-secondary btn-form display-4">Sign In<br></button></span>
             </form>
         </div>
     </div>
@@ -225,7 +225,7 @@
                     </div>
 
                     <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
-                        <input type="hidden" value="kyd+xw9bvhU8PTKGkOqXr5pmiSBEfOtx2ofU0D8eVWH3tZo1GX5hf/Oo8NfEqzfBzmlPbzhdeMTmPBnGD+l/nASzArddLmklzwuDrGPuZOIkHuHYL92jWS6gbXIbx4cR" data-form-email="true">
+                        <input type="hidden" value="L10j/m9jp4dKZ4BKydX03dRJiNVMeGHhYqHSeW9HYNGv1dmAYVBf8tzHRQ/M7SxaFjLBSSGJe2rzpIAavKbN9Dy9G1OlfB9jpT6F7V3alUL3GRpbc0ghtAoVQ1HaZQet" data-form-email="true">
                         <div class="form-group">
                             <input type="email" class="form-control input-sm input-inverse my-2" name="email" required="" data-form-field="Email" placeholder="Email" id="email-footer4-1c">
                         </div>
