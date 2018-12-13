@@ -28,4 +28,8 @@ public class PublisherService {
 	public void deleteById(int id) {
 		publisherJpa.deleteById(id);
 	}
+
+	public void save(Publisher publisher) {
+		publisherJpa.save(publisher);
+	}
 }

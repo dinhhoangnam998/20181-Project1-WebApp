@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+Your author will display here
 </body>
 </html>

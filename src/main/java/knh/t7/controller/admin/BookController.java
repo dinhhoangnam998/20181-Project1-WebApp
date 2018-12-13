@@ -27,6 +27,19 @@ public class BookController {
 		return "admin/book/showBook";
 	}
 
+	@GetMapping("showAddBook")
+	public String showAddBook(Model model) {
+		model.addAttribute("book", new Book());
+		return "admin/book/showAddBook";
+	}
+
+	@PostMapping("addBook")
+	public String addBook(@ModelAttribute("book") Book book, @RequestParam("creation_id") int creation_id,
+			@RequestParam("type_id") int type_id, @RequestParam("publisher_id") int publisher_id) {
+		bookService.save(book, creation_id, type_id, publisher_id);
+		return "redirect:admin/book/showBook";
+	}
+
 	@GetMapping("showEditBook")
 	public String showEditBook(@RequestParam("id") int id, Model model) {
 		Book book = bookService.getById(id);
@@ -35,8 +48,9 @@ public class BookController {
 	}
 
 	@PostMapping("editBook")
-	public String editBook(@ModelAttribute("book") Book book) {
-		bookService.update(book);
+	public String editBook(@ModelAttribute("book") Book book, @RequestParam("creation_id") int creation_id,
+			@RequestParam("type_id") int type_id, @RequestParam("publisher_id") int publisher_id) {
+		bookService.update(book, creation_id, type_id, publisher_id);
 		return "redirect:admin/book/showBook";
 	}
 

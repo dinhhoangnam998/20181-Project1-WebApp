@@ -27,6 +27,19 @@ public class CreationController {
 		return "admin/creation/showCreation";
 	}
 
+	@GetMapping("showAddCreation")
+	public String showAddCreation(Model model) {
+		model.addAttribute("creation", new Creation());
+		return "admin/creation/showAddCreation";
+	}
+
+	@PostMapping("addCreation")
+	public String addCreation(@ModelAttribute("creation") Creation creation,
+			@RequestParam("category_id") int category_id, @RequestParam("author_id") int author_id) {
+		creationService.save(creation, category_id, author_id);
+		return "redirect:admin/creation/showCreation";
+	}
+
 	@GetMapping("showEditCreation")
 	public String showEditCreation(@RequestParam("id") int id, Model model) {
 		Creation creation = creationService.getById(id);
@@ -35,8 +48,9 @@ public class CreationController {
 	}
 
 	@PostMapping("editCreation")
-	public String editCreation(@ModelAttribute("creation") Creation creation) {
-		creationService.update(creation);
+	public String editCreation(@ModelAttribute("creation") Creation creation,
+			@RequestParam("category_id") int category_id, @RequestParam("author_id") int author_id) {
+		creationService.update(creation, category_id, author_id);
 		return "redirect:admin/creation/showCreation";
 	}
 

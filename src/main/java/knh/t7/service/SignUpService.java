@@ -24,9 +24,10 @@ public class SignUpService {
 	@Autowired
 	private PhoneJpa phoneJpa;
 
-	public boolean signUp(String username, String password, String confirmpassword, String email, String fullname, int gender, Date birthday, String address, String phonenumber) {
-		if (userJpa.findByUsername(username) == null && password.equals(confirmpassword)) {
-			User user = new User(username, password, email, fullname, gender, birthday, 1);
+	public boolean signUp(User user, String address, String phonenumber) {
+		
+		// must be check here...
+		if (true) {
 			Address addrezz = new Address(address, user);
 			Phone phone = new Phone(phonenumber, user);
 

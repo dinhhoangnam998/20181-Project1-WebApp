@@ -28,6 +28,18 @@ public class TypeController {
 		return "admin/type/showType";
 	}
 
+	@GetMapping("showAddType")
+	public String showAddType(Model model) {
+		model.addAttribute("type", new Type());
+		return "admin/type/showAddType";
+	}
+
+	@PostMapping("addType")
+	public String addType(@ModelAttribute("type") Type type) {
+		typeService.save(type);
+		return "redirect:admin/type/showType";
+	}
+
 	@GetMapping("showEditType")
 	public String showEditType(@RequestParam("id") int id, Model model) {
 		Type type = typeService.getById(id);

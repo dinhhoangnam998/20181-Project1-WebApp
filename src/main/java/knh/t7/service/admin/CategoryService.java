@@ -28,4 +28,8 @@ public class CategoryService {
 	public void deleteById(int id) {
 		categoryJpa.deleteById(id);
 	}
+
+	public void save(Category category) {
+		categoryJpa.save(category);
+	}
 }

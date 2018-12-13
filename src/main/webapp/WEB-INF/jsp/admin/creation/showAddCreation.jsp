@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-you will edit author here
+
 </body>
 </html>

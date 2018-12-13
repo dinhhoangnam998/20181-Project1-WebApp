@@ -20,8 +20,8 @@ public class Creation {
 	private String name;
 	private Date releasedate;
 
-	@ManyToMany
-	private Set<Category> category;
+	@ManyToOne
+	private Category category;
 
 	@ManyToOne
 	private Author author;
@@ -30,7 +30,14 @@ public class Creation {
 		super();
 	}
 
-	public Creation(String name, Date releasedate, Set<Category> category, Author author) {
+	public Creation(String name, Category category, Author author) {
+		super();
+		this.name = name;
+		this.category = category;
+		this.author = author;
+	}
+
+	public Creation(String name, Date releasedate, Category category, Author author) {
 		super();
 		this.name = name;
 		this.releasedate = releasedate;
@@ -38,7 +45,7 @@ public class Creation {
 		this.author = author;
 	}
 
-	public Creation(int id, String name, Date releasedate, Set<Category> category, Author author) {
+	public Creation(int id, String name, Date releasedate, Category category, Author author) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -71,11 +78,11 @@ public class Creation {
 		this.releasedate = releasedate;
 	}
 
-	public Set<Category> getCategory() {
+	public Category getCategory() {
 		return category;
 	}
 
-	public void setCategory(Set<Category> category) {
+	public void setCategory(Category category) {
 		this.category = category;
 	}
 

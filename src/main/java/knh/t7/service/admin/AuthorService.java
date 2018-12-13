@@ -30,4 +30,9 @@ public class AuthorService {
 		authorJpa.deleteById(id);
 	}
 
+	public void save(Author author) {
+		authorJpa.save(author);
+		
+	}
+
 }

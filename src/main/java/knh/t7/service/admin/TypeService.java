@@ -28,4 +28,8 @@ public class TypeService {
 	public void deleteById(int id) {
 		typeJpa.deleteById(id);
 	}
+
+	public void save(Type type) {
+		typeJpa.save(type);
+	}
 }

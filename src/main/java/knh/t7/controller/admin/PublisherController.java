@@ -27,6 +27,18 @@ public class PublisherController {
 		return "admin/publisher/showPublisher";
 	}
 
+	@GetMapping("showAddPublisher")
+	public String showAddPublisher(Model model) {
+		model.addAttribute("publisher", new Publisher());
+		return "admin/publisher/showAddPublisher";
+	}
+
+	@PostMapping("addPublisher")
+	public String addPublisher(@ModelAttribute("publisher") Publisher publisher) {
+		publisherService.save(publisher);
+		return "redirect:admin/publisher/showPublisher";
+	}
+
 	@GetMapping("showEditPublisher")
 	public String showEditPublisher(@RequestParam("id") int id, Model model) {
 		Publisher publisher = publisherService.getById(id);

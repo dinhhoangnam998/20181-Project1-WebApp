@@ -27,6 +27,18 @@ public class CategoryController {
 		return "admin/category/showCategory";
 	}
 
+	@GetMapping("showAddCategory")
+	public String showAddCategory(Model model) {
+		model.addAttribute("category", new Category());
+		return "admin/category/showAddCategory";
+	}
+
+	@PostMapping("addCategory")
+	public String addCategory(@ModelAttribute("category") Category category) {
+		categoryService.save(category);
+		return "redirect:admin/category/showCategory";
+	}
+
 	@GetMapping("showEditCategory")
 	public String showEditCategory(@RequestParam("id") int id, Model model) {
 		Category category = categoryService.getById(id);

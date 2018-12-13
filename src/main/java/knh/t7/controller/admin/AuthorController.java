@@ -28,6 +28,18 @@ public class AuthorController {
 		return "admin/author/showAuthor";
 	}
 
+	@GetMapping("showAddAuthor")
+	public String showAddAuthor(Model model) {
+		model.addAttribute("author", new Author());
+		return "admin/author/showAddAuthor";
+	}
+
+	@PostMapping("addAuthor")
+	public String addAuthor(@ModelAttribute("author") Author author) {
+		authorService.save(author);
+		return "redirect:admin/author/showAuthor";
+	}
+
 	@GetMapping("showEditAuthor")
 	public String showEditAuthor(@RequestParam("id") int id, Model model) {
 		Author author = authorService.getById(id);

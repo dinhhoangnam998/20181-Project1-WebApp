@@ -14,32 +14,24 @@ public class Publisher {
 
 	@Column(nullable = false, unique = true)
 	private String name;
-	private String city;
-	private String district;
-	private String street;
-	private String homenumber;
+
+	private String address;
 
 	public Publisher() {
 		super();
 	}
 
-	public Publisher(String name, String city, String district, String street, String homenumber) {
+	public Publisher(String name, String address) {
 		super();
 		this.name = name;
-		this.city = city;
-		this.district = district;
-		this.street = street;
-		this.homenumber = homenumber;
+		this.address = address;
 	}
 
-	public Publisher(int id, String name, String city, String district, String street, String homenumber) {
+	public Publisher(int id, String name, String address) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.city = city;
-		this.district = district;
-		this.street = street;
-		this.homenumber = homenumber;
+		this.address = address;
 	}
 
 	public int getId() {
@@ -58,42 +50,17 @@ public class Publisher {
 		this.name = name;
 	}
 
-	public String getCity() {
-		return city;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(String district) {
-		this.district = district;
-	}
-
-	public String getStreet() {
-		return street;
-	}
-
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	public String getHomenumber() {
-		return homenumber;
-	}
-
-	public void setHomenumber(String homenumber) {
-		this.homenumber = homenumber;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	@Override
 	public String toString() {
-		return "Publisher [id=" + id + ", name=" + name + ", city=" + city + ", district=" + district + ", street="
-				+ street + ", homenumber=" + homenumber + "]";
+		return "Publisher [id=" + id + ", name=" + name + ", address=" + address + "]";
 	}
 
 }
