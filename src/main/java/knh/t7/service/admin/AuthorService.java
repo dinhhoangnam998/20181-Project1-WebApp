@@ -13,12 +13,11 @@ public class AuthorService {
 
 	@Autowired
 	private AuthorJpa authorJpa;
-	
 
 	public List<Author> getAll() {
 		return authorJpa.findAll();
 	}
-	
+
 	public Author getById(int id) {
 		return authorJpa.getOne(id);
 	}

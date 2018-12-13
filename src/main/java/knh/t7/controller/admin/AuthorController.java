@@ -20,27 +20,27 @@ public class AuthorController {
 
 	@Autowired
 	private AuthorService authorService;
-	
-	@GetMapping(value= {"showAuthor", "author"})
+
+	@GetMapping(value = { "showAuthor", "author" })
 	public String showAuthor(Model model) {
 		List<Author> authorList = authorService.getAll();
 		model.addAttribute("authorList", authorList);
 		return "admin/author/showAuthor";
 	}
-	
+
 	@GetMapping("showEditAuthor")
 	public String showEditAuthor(@RequestParam("id") int id, Model model) {
 		Author author = authorService.getById(id);
 		model.addAttribute("author", author);
 		return "admin/author/showEditAuthor";
 	}
-	
+
 	@PostMapping("editAuthor")
 	public String editAuthor(@ModelAttribute("author") Author author) {
 		authorService.update(author);
 		return "redirect:admin/author/showAuthor";
 	}
-	
+
 	@GetMapping("deleteAuthor")
 	public String deleteAuthor(@RequestParam("id") int id) {
 		authorService.deleteById(id);
