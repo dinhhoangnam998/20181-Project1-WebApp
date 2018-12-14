@@ -5,23 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import knh.t7.model.Author;
-import knh.t7.model.Category;
 import knh.t7.model.Creation;
-import knh.t7.repository.AuthorJpa;
-import knh.t7.repository.CategoryJpa;
 import knh.t7.repository.CreationJpa;
 
 @Service
 public class CreationService {
 	@Autowired
 	private CreationJpa creationJpa;
-
-	@Autowired
-	private CategoryJpa categoryJpa;
-
-	@Autowired
-	private AuthorJpa authorJpa;
 
 	public List<Creation> getAll() {
 		return creationJpa.findAll();
@@ -31,13 +21,7 @@ public class CreationService {
 		return creationJpa.getOne(id);
 	}
 
-	public void update(Creation creation, int category_id, int author_id) {
-
-		Category category = categoryJpa.getOne(category_id);
-		Author author = authorJpa.getOne(author_id);
-		creation.setAuthor(author);
-		creation.setCategory(category);
-
+	public void update(Creation creation) {
 		creationJpa.save(creation);
 	}
 
@@ -46,11 +30,6 @@ public class CreationService {
 	}
 
 	public void save(Creation creation) {
-		Category category = categoryJpa.getOne(creation.getCategory().getId());
-		Author author = authorJpa.getOne(creation.getAuthor().getId());
-
-		creation.setAuthor(author);
-		creation.setCategory(category);
 
 		creationJpa.save(creation);
 

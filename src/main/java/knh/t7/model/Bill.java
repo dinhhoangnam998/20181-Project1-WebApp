@@ -9,8 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Proxy;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Proxy(lazy = false)
@@ -19,7 +22,10 @@ public class Bill {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
+	
 	@Column(columnDefinition = "datetime default now()")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
 	private Date billdate;
 
 	@Column(columnDefinition = "int default 0")

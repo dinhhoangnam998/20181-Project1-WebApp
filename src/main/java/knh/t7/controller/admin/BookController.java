@@ -34,9 +34,8 @@ public class BookController {
 	}
 
 	@PostMapping("addBook")
-	public String addBook(@ModelAttribute("book") Book book, @RequestParam("creation_id") int creation_id,
-			@RequestParam("type_id") int type_id, @RequestParam("publisher_id") int publisher_id) {
-		bookService.save(book, creation_id, type_id, publisher_id);
+	public String addBook(@ModelAttribute("book") Book book) {
+		bookService.save(book);
 		return "redirect:/admin/showBook";
 	}
 
@@ -48,9 +47,8 @@ public class BookController {
 	}
 
 	@PostMapping("editBook")
-	public String editBook(@ModelAttribute("book") Book book, @RequestParam("creation_id") int creation_id,
-			@RequestParam("type_id") int type_id, @RequestParam("publisher_id") int publisher_id) {
-		bookService.update(book, creation_id, type_id, publisher_id);
+	public String editBook(@ModelAttribute("book") Book book) {
+		bookService.update(book);
 		return "redirect:/admin/showBook";
 	}
 

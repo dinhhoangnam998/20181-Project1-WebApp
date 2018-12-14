@@ -9,8 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Proxy;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Proxy(lazy = false)
@@ -31,7 +34,11 @@ public class User {
 
 	@Column(nullable = false)
 	private String fullname;
+	
 	private int gender;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
 	private Date birthday;
 
 	@Column(columnDefinition = "int default 1")

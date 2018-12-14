@@ -32,7 +32,7 @@ public class AuthorService {
 
 	public void save(Author author) {
 		authorJpa.save(author);
-		
+
 	}
 
 }

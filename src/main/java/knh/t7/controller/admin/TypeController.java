@@ -1,17 +1,11 @@
 package knh.t7.controller.admin;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,13 +20,6 @@ public class TypeController {
 
 	@Autowired
 	private TypeService typeService;
-	
-	@InitBinder
-	public void bindingPreparation(WebDataBinder binder) {
-	  DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
-	  CustomDateEditor customDate = new CustomDateEditor(dateFormat, true);
-	  binder.registerCustomEditor(Date.class, customDate);
-	}
 
 	@GetMapping(value = { "showType", "type" })
 	public String showType(Model model) {

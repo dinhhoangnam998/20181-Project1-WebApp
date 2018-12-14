@@ -20,13 +20,15 @@
                     <td><form:input path="releasedate" type="date"/></td>
                 </tr>
                 <tr>
-                    <td><form:label path="category.id" >Category Id</form:label></td>
-                    <td><form:input path="category.id" /></td>
+                    <td><form:label path="category.id">Category Id</form:label></td>  
+                    <td><form:input path="category.id" type="number"/></td>
                 </tr>
+                
                 <tr>
                     <td><form:label path="author.id">Author Id</form:label></td>
-                    <td><form:input path="author.id" type="date"/></td>
+                    <td><form:input path="author.id" type="number"/></td>
                 </tr>
+          
                 <tr>
                     <td><input type="submit" value="Submit"/></td>
                 </tr>

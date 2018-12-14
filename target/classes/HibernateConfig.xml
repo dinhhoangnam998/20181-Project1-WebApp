@@ -11,6 +11,8 @@
 
 	<context:component-scan base-package="knh.t7"></context:component-scan>
 	
+	
+	<!-- whenever you create new database, you should set character set and collate to utf8 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/prodb?useSSL=false"></property>
@@ -24,6 +26,7 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQL57InnoDBDialect</prop> -->
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>

@@ -14,6 +14,7 @@ public class Phone {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
 	private String phonenumber;
 
 	@ManyToOne

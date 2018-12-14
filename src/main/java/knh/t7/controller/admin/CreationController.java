@@ -20,6 +20,7 @@ public class CreationController {
 	@Autowired
 	private CreationService creationService;
 
+
 	@GetMapping(value = { "showCreation", "creation" })
 	public String showCreation(Model model) {
 		List<Creation> creationList = creationService.getAll();
@@ -47,9 +48,8 @@ public class CreationController {
 	}
 
 	@PostMapping("editCreation")
-	public String editCreation(@ModelAttribute("creation") Creation creation,
-			@RequestParam("category_id") int category_id, @RequestParam("author_id") int author_id) {
-		creationService.update(creation, category_id, author_id);
+	public String editCreation(@ModelAttribute("creation") Creation creation) {
+		creationService.update(creation);
 		return "redirect:/admin/showCreation";
 	}
 
