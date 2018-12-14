@@ -45,9 +45,9 @@ public class CreationService {
 		creationJpa.deleteById(id);
 	}
 
-	public void save(Creation creation, int category_id, int author_id) {
-		Category category = categoryJpa.getOne(category_id);
-		Author author = authorJpa.getOne(author_id);
+	public void save(Creation creation) {
+		Category category = categoryJpa.getOne(creation.getCategory().getId());
+		Author author = authorJpa.getOne(creation.getAuthor().getId());
 
 		creation.setAuthor(author);
 		creation.setCategory(category);

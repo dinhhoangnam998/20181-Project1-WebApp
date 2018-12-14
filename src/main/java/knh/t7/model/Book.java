@@ -7,7 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
+@Proxy(lazy = false)
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,21 +44,33 @@ public class Book {
 	private String imageurl;
 
 	@ManyToOne
-	private Creation creation;
+	private Creation creation = new Creation();
 
 	@ManyToOne
-	private Type type;
+	private Type type = new Type();
 
 	@ManyToOne
-	private Publisher publisher;
+	private Publisher publisher = new Publisher();
 
 	public Book() {
 		super();
 	}
+	
+	public Book(String language, int pagenumber, int republishno, int coverprice, int creationId, int typeId,
+			int publisherId) {
+		this();
+		this.language = language;
+		this.pagenumber = pagenumber;
+		this.republishno = republishno;
+		this.coverprice = coverprice;
+		this.creation.setId(creationId);
+		this.type.setId(typeId);
+		this.publisher.setId(publisherId);
+	}
 
 	public Book(String language, int pagenumber, int republishno, int coverprice, Creation creation, Type type,
 			Publisher publisher) {
-		super();
+		this();
 		this.language = language;
 		this.pagenumber = pagenumber;
 		this.republishno = republishno;

@@ -34,10 +34,9 @@ public class CreationController {
 	}
 
 	@PostMapping("addCreation")
-	public String addCreation(@ModelAttribute("creation") Creation creation,
-			@RequestParam("category_id") int category_id, @RequestParam("author_id") int author_id) {
-		creationService.save(creation, category_id, author_id);
-		return "redirect:admin/creation/showCreation";
+	public String addCreation(@ModelAttribute("creation") Creation creation) {
+		creationService.save(creation);
+		return "redirect:/admin/showCreation";
 	}
 
 	@GetMapping("showEditCreation")
@@ -51,12 +50,12 @@ public class CreationController {
 	public String editCreation(@ModelAttribute("creation") Creation creation,
 			@RequestParam("category_id") int category_id, @RequestParam("author_id") int author_id) {
 		creationService.update(creation, category_id, author_id);
-		return "redirect:admin/creation/showCreation";
+		return "redirect:/admin/showCreation";
 	}
 
 	@GetMapping("deleteCreation")
 	public String deleteCreation(@RequestParam("id") int id) {
 		creationService.deleteById(id);
-		return "redirect:admin/creation/showCreation";
+		return "redirect:/admin/showCreation";
 	}
 }

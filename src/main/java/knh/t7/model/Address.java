@@ -7,7 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
+@Proxy(lazy = false)
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,10 +20,16 @@ public class Address {
 	private String address;
 
 	@ManyToOne
-	private User user;
+	private User user = new User();
 
 	public Address() {
 		super();
+	}
+	
+	public Address(String address, int userId) {
+		this();
+		this.address = address;
+		this.user.setId(userId);
 	}
 
 	public Address(String address, User user) {

@@ -1,11 +1,17 @@
 package knh.t7.controller.admin;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +25,13 @@ import knh.t7.service.admin.PublisherService;
 public class PublisherController {
 	@Autowired
 	private PublisherService publisherService;
+	
+	@InitBinder
+	public void bindingPreparation(WebDataBinder binder) {
+	  DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
+	  CustomDateEditor customDate = new CustomDateEditor(dateFormat, true);
+	  binder.registerCustomEditor(Date.class, customDate);
+	}
 
 	@GetMapping(value = { "showPublisher", "publisher" })
 	public String showPublisher(Model model) {
@@ -36,7 +49,7 @@ public class PublisherController {
 	@PostMapping("addPublisher")
 	public String addPublisher(@ModelAttribute("publisher") Publisher publisher) {
 		publisherService.save(publisher);
-		return "redirect:admin/publisher/showPublisher";
+		return "redirect:/admin/showPublisher";
 	}
 
 	@GetMapping("showEditPublisher")
@@ -49,12 +62,12 @@ public class PublisherController {
 	@PostMapping("editPublisher")
 	public String editPublisher(@ModelAttribute("publisher") Publisher publisher) {
 		publisherService.update(publisher);
-		return "redirect:admin/publisher/showPublisher";
+		return "redirect:/admin/showPublisher";
 	}
 
 	@GetMapping("deletePublisher")
 	public String deletePublisher(@RequestParam("id") int id) {
 		publisherService.deleteById(id);
-		return "redirect:admin/publisher/showPublisher";
+		return "redirect:/admin/showPublisher";
 	}
 }

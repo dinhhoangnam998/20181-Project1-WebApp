@@ -7,7 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
+@Proxy(lazy = false)
 public class Book_InputEvent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,13 +26,22 @@ public class Book_InputEvent {
 	private int remain;
 
 	@OneToOne
-	private Book book;
+	private Book book = new Book();
 
 	@OneToOne
-	private InputEvent inputevent;
+	private InputEvent inputevent = new InputEvent();
 
 	public Book_InputEvent() {
 		super();
+	}
+	
+	public Book_InputEvent(int inputprice, int quantity, int remain, int bookId, int inputeventId) {
+		this();
+		this.inputprice = inputprice;
+		this.quantity = quantity;
+		this.remain = remain;
+		this.book.setId(bookId);
+		this.inputevent.setId(inputeventId);
 	}
 
 	public Book_InputEvent(int inputprice, int quantity, int remain, Book book, InputEvent inputevent) {

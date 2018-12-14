@@ -10,7 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
+@Proxy(lazy = false)
 public class Bill {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,16 +26,32 @@ public class Bill {
 	private int state;
 
 	@ManyToOne
-	private User user;
+	private User user = new User();
 
 	@OneToOne
-	private Address address;
+	private Address address = new Address();
 
 	@OneToOne
-	private Phone phone;
+	private Phone phone = new Phone();
 
 	public Bill() {
 		super();
+	}
+
+	public Bill(int userId, int addressId, int phoneId) {
+		this();
+		this.user.setId(userId);
+		this.address.setId(addressId);
+		this.phone.setId(phoneId);
+	}
+
+	public Bill(Date billdate, int state, int userId, int addressId, int phoneId) {
+		this();
+		this.billdate = billdate;
+		this.state = state;
+		this.user.setId(userId);
+		this.address.setId(addressId);
+		this.phone.setId(phoneId);
 	}
 
 	public Bill(User user, Address address, Phone phone) {

@@ -8,7 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
+@Proxy(lazy = false)
 public class BillDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,19 +21,29 @@ public class BillDetail {
 	private int quantity;
 
 	@ManyToOne
-	private Bill bill;
+	private Bill bill = new Bill();
 
 	@OneToOne
-	private Book book;
+	private Book book = new Book();
 
 	@OneToOne
-	private Book_SaleEvent book_saleevent;
+	private Book_SaleEvent book_saleevent = new Book_SaleEvent();
 
 	@OneToOne
-	private Book_InputEvent book_inputevent;
+	private Book_InputEvent book_inputevent = new Book_InputEvent();
 
 	public BillDetail() {
 		super();
+	}
+	
+	public BillDetail(int quantity, int billId, int bookId, int book_saleeventId,
+			int book_inputeventId) {
+		this();
+		this.quantity = quantity;
+		this.bill.setId(billId);
+		this.book.setId(bookId);
+		this.book_saleevent.setId(book_saleeventId);
+		this.book_inputevent.setId(book_inputeventId);
 	}
 
 	public BillDetail(int quantity, Bill bill, Book book, Book_SaleEvent book_saleevent,

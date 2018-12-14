@@ -11,7 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
+@Proxy(lazy = false)
 public class Creation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,13 +24,28 @@ public class Creation {
 	private Date releasedate;
 
 	@ManyToOne
-	private Category category;
+	private Category category = new Category();
 
 	@ManyToOne
-	private Author author;
+	private Author author = new Author();
 
 	public Creation() {
 		super();
+	}
+	
+	public Creation(String name, int categoryId, int authorId) {
+		this();
+		this.name = name;
+		this.category.setId(categoryId);
+		this.author.setId(authorId);
+	}
+
+	public Creation(String name, Date releasedate, int categoryId, int authorId) {
+		this();
+		this.name = name;
+		this.releasedate = releasedate;
+		this.category.setId(categoryId);
+		this.author.setId(authorId);
 	}
 
 	public Creation(String name, Category category, Author author) {

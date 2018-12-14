@@ -1,11 +1,17 @@
 package knh.t7.controller.admin;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +26,13 @@ public class TypeController {
 
 	@Autowired
 	private TypeService typeService;
+	
+	@InitBinder
+	public void bindingPreparation(WebDataBinder binder) {
+	  DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
+	  CustomDateEditor customDate = new CustomDateEditor(dateFormat, true);
+	  binder.registerCustomEditor(Date.class, customDate);
+	}
 
 	@GetMapping(value = { "showType", "type" })
 	public String showType(Model model) {
@@ -37,7 +50,7 @@ public class TypeController {
 	@PostMapping("addType")
 	public String addType(@ModelAttribute("type") Type type) {
 		typeService.save(type);
-		return "redirect:admin/type/showType";
+		return "redirect:/admin/showType";
 	}
 
 	@GetMapping("showEditType")
@@ -50,12 +63,12 @@ public class TypeController {
 	@PostMapping("editType")
 	public String editType(@ModelAttribute("type") Type type) {
 		typeService.update(type);
-		return "redirect:admin/type/showType";
+		return "redirect:/admin/showType";
 	}
 
 	@GetMapping("deleteType")
 	public String deleteType(@RequestParam("id") int id) {
 		typeService.deleteById(id);
-		return "redirect:admin/type/showType";
+		return "redirect:/admin/showType";
 	}
 }
