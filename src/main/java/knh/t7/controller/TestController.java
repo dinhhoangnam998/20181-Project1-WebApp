@@ -15,12 +15,12 @@ public class TestController {
 	@Autowired
 	private CategoryJpa categoryJpa;
 
-	@GetMapping("test")
+	@GetMapping("hehe/hihi/test")
 	public String test(Model model) {
 //		Category category = new Category("Manga");
 //		categoryJpa.save(category);
 //		model.addAttribute("error", true);
-		return "testBackEnd";
+		return "redirect:/testMobirise";
 	}
 
 	@GetMapping("testMobirise")

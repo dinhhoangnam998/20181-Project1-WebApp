@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-Your author will display here
+	<table border=1>
+		<tr>
+			<td>id</td>
+			<td>Name</td>
+			<td>Birth Day</td>
+			<td>Death Day</td>
+			<td>Description</td>
+			<td>Image Url</td>
+		</tr>
+		
+		<c:forEach var="listItem" items="${authorList}">
+			<tr>
+				<td>${listItem.id}</td>
+				<td>${listItem.name}</td>
+				<td>${listItem.birthday}</td>
+				<td>${listItem.deathday}</td>
+				<td>${listItem.description}</td>
+				<td>${listItem.imageurl}</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>

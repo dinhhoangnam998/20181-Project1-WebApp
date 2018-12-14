@@ -1,11 +1,17 @@
 package knh.t7.controller.admin;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +26,13 @@ public class AuthorController {
 
 	@Autowired
 	private AuthorService authorService;
+	
+	@InitBinder
+	public void bindingPreparation(WebDataBinder binder) {
+	  DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
+	  CustomDateEditor customDate = new CustomDateEditor(dateFormat, true);
+	  binder.registerCustomEditor(Date.class, customDate);
+	}
 
 	@GetMapping(value = { "showAuthor", "author" })
 	public String showAuthor(Model model) {
@@ -37,7 +50,7 @@ public class AuthorController {
 	@PostMapping("addAuthor")
 	public String addAuthor(@ModelAttribute("author") Author author) {
 		authorService.save(author);
-		return "redirect:admin/author/showAuthor";
+		return "redirect:/admin/showAuthor";
 	}
 
 	@GetMapping("showEditAuthor")
@@ -50,12 +63,12 @@ public class AuthorController {
 	@PostMapping("editAuthor")
 	public String editAuthor(@ModelAttribute("author") Author author) {
 		authorService.update(author);
-		return "redirect:admin/author/showAuthor";
+		return "redirect:/admin/showAuthor";
 	}
 
 	@GetMapping("deleteAuthor")
 	public String deleteAuthor(@RequestParam("id") int id) {
 		authorService.deleteById(id);
-		return "redirect:admin/author/showAuthor";
+		return "redirect:/admin/showAuthor";
 	}
 }

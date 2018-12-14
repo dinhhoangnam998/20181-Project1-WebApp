@@ -7,8 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Proxy;
+import org.springframework.data.repository.cdi.Eager;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
+@Proxy(lazy = false)
 public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,7 +23,9 @@ public class Author {
 
 	@Column(nullable = false, unique = true)
 	private String name;
+	
 	private Date birthday;
+	
 	private Date deathday;
 	private String description;
 	private String imageurl;
