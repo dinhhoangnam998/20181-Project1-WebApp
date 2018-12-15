@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,7 +21,6 @@ public class Bill {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	
 	@Column(columnDefinition = "datetime default now()")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
@@ -31,59 +29,48 @@ public class Bill {
 	@Column(columnDefinition = "int default 0")
 	private int state;
 
+	private String note;
+
 	@ManyToOne
 	private User user = new User();
-
-	@OneToOne
-	private Address address = new Address();
-
-	@OneToOne
-	private Phone phone = new Phone();
 
 	public Bill() {
 		super();
 	}
 
-	public Bill(int userId, int addressId, int phoneId) {
+	public Bill(String note, int userId) {
 		this();
+		this.note = note;
 		this.user.setId(userId);
-		this.address.setId(addressId);
-		this.phone.setId(phoneId);
 	}
 
-	public Bill(Date billdate, int state, int userId, int addressId, int phoneId) {
+	public Bill(Date billdate, String note, int userId) {
 		this();
 		this.billdate = billdate;
-		this.state = state;
+		this.note = note;
 		this.user.setId(userId);
-		this.address.setId(addressId);
-		this.phone.setId(phoneId);
 	}
 
-	public Bill(User user, Address address, Phone phone) {
+	public Bill(String note, User user) {
 		super();
+		this.note = note;
 		this.user = user;
-		this.address = address;
-		this.phone = phone;
 	}
 
-	public Bill(Date billdate, int state, User user, Address address, Phone phone) {
+	public Bill(Date billdate, String note, User user) {
 		super();
 		this.billdate = billdate;
-		this.state = state;
+		this.note = note;
 		this.user = user;
-		this.address = address;
-		this.phone = phone;
 	}
 
-	public Bill(int id, Date billdate, int state, User user, Address address, Phone phone) {
+	public Bill(int id, Date billdate, int state, String note, User user) {
 		super();
 		this.id = id;
 		this.billdate = billdate;
 		this.state = state;
+		this.note = note;
 		this.user = user;
-		this.address = address;
-		this.phone = phone;
 	}
 
 	public int getId() {
@@ -110,6 +97,14 @@ public class Bill {
 		this.state = state;
 	}
 
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -118,26 +113,10 @@ public class Bill {
 		this.user = user;
 	}
 
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	public Phone getPhone() {
-		return phone;
-	}
-
-	public void setPhone(Phone phone) {
-		this.phone = phone;
-	}
-
 	@Override
 	public String toString() {
-		return "Bill [id=" + id + ", billdate=" + billdate + ", state=" + state + ", user=" + user + ", address="
-				+ address + ", phone=" + phone + "]";
+		return "Bill [id=" + id + ", billdate=" + billdate + ", state=" + state + ", note=" + note + ", user=" + user
+				+ "]";
 	}
 
 }

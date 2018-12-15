@@ -34,21 +34,19 @@ public class User {
 
 	@Column(nullable = false)
 	private String fullname;
-	
+
 	private int gender;
-	
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date birthday;
 
+	private String address;
+
+	private String phone;
+
 	@Column(columnDefinition = "int default 1")
 	private int state;
-
-	@OneToMany(mappedBy = "user")
-	private Set<Address> address;
-
-	@OneToMany(mappedBy = "user")
-	private Set<Phone> phone;
 
 	@OneToMany(mappedBy = "user")
 	private Set<Bill> bill;
@@ -57,15 +55,8 @@ public class User {
 		super();
 	}
 
-	public User(String username, String password, String email, String fullname) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.fullname = fullname;
-	}
-
-	public User(String username, String password, String email, String fullname, int gender, Date birthday, int state) {
+	public User(String username, String password, String email, String fullname, int gender, Date birthday,
+			String address, String phone) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -73,11 +64,12 @@ public class User {
 		this.fullname = fullname;
 		this.gender = gender;
 		this.birthday = birthday;
-		this.state = state;
+		this.address = address;
+		this.phone = phone;
 	}
 
 	public User(int id, String username, String password, String email, String fullname, int gender, Date birthday,
-			int state) {
+			String address, String phone, int state, Set<Bill> bill) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -86,7 +78,10 @@ public class User {
 		this.fullname = fullname;
 		this.gender = gender;
 		this.birthday = birthday;
+		this.address = address;
+		this.phone = phone;
 		this.state = state;
+		this.bill = bill;
 	}
 
 	public int getId() {
@@ -145,28 +140,28 @@ public class User {
 		this.birthday = birthday;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public int getState() {
 		return state;
 	}
 
 	public void setState(int state) {
 		this.state = state;
-	}
-
-	public Set<Address> getAddress() {
-		return address;
-	}
-
-	public void setAddress(Set<Address> address) {
-		this.address = address;
-	}
-
-	public Set<Phone> getPhone() {
-		return phone;
-	}
-
-	public void setPhone(Set<Phone> phone) {
-		this.phone = phone;
 	}
 
 	public Set<Bill> getBill() {
@@ -180,8 +175,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", fullname=" + fullname + ", gender=" + gender + ", birthday=" + birthday + ", state=" + state
-				+ ", address=" + address + ", phone=" + phone + ", bill=" + bill + "]";
+				+ ", fullname=" + fullname + ", gender=" + gender + ", birthday=" + birthday + ", address=" + address
+				+ ", phone=" + phone + ", state=" + state + ", bill=" + bill + "]";
 	}
 
 }
