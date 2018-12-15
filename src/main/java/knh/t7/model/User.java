@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Proxy;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -28,6 +29,9 @@ public class User {
 
 	@Column(nullable = false)
 	private String password;
+
+	@Transient
+	private String confirmpassword;
 
 	@Column(nullable = false)
 	private String email;
@@ -170,6 +174,14 @@ public class User {
 
 	public void setBill(Set<Bill> bill) {
 		this.bill = bill;
+	}
+
+	public String getConfirmpassword() {
+		return confirmpassword;
+	}
+
+	public void setConfirmpassword(String confirmpassword) {
+		this.confirmpassword = confirmpassword;
 	}
 
 	@Override
