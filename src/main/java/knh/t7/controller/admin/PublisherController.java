@@ -15,46 +15,47 @@ import knh.t7.model.Publisher;
 import knh.t7.service.admin.PublisherService;
 
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/publisher/")
 public class PublisherController {
+
 	@Autowired
 	private PublisherService publisherService;
 
-	@GetMapping(value = { "showPublisher", "publisher" })
-	public String showPublisher(Model model) {
-		List<Publisher> publisherList = publisherService.getAll();
-		model.addAttribute("publisherList", publisherList);
-		return "admin/publisher/showPublisher";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<Publisher> listPublisher = publisherService.getAll();
+		model.addAttribute("listPublisher", listPublisher);
+		return "admin/publisher/show";
 	}
 
-	@GetMapping("showAddPublisher")
-	public String showAddPublisher(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("publisher", new Publisher());
-		return "admin/publisher/showAddPublisher";
+		return "admin/publisher/add";
 	}
 
-	@PostMapping("addPublisher")
-	public String addPublisher(@ModelAttribute("publisher") Publisher publisher) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("publisher") Publisher publisher) {
 		publisherService.save(publisher);
-		return "redirect:/admin/showPublisher";
+		return "redirect:/admin/publisher/";
 	}
 
-	@GetMapping("showEditPublisher")
-	public String showEditPublisher(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		Publisher publisher = publisherService.getById(id);
 		model.addAttribute("publisher", publisher);
-		return "admin/publisher/showEditPublisher";
+		return "admin/publisher/edit";
 	}
 
-	@PostMapping("editPublisher")
+	@PostMapping("edit")
 	public String editPublisher(@ModelAttribute("publisher") Publisher publisher) {
 		publisherService.update(publisher);
-		return "redirect:/admin/showPublisher";
+		return "redirect:/admin/publisher/";
 	}
 
-	@GetMapping("deletePublisher")
-	public String deletePublisher(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		publisherService.deleteById(id);
-		return "redirect:/admin/showPublisher";
+		return "redirect:/admin/publisher/";
 	}
 }

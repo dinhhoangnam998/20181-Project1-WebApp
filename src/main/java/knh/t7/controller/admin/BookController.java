@@ -15,46 +15,47 @@ import knh.t7.model.Book;
 import knh.t7.service.admin.BookService;
 
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/book/")
 public class BookController {
+
 	@Autowired
 	private BookService bookService;
 
-	@GetMapping(value = { "showBook", "book" })
-	public String showBook(Model model) {
-		List<Book> bookList = bookService.getAll();
-		model.addAttribute("bookList", bookList);
-		return "admin/book/showBook";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<Book> listBook = bookService.getAll();
+		model.addAttribute("listBook", listBook);
+		return "admin/book/show";
 	}
 
-	@GetMapping("showAddBook")
-	public String showAddBook(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("book", new Book());
-		return "admin/book/showAddBook";
+		return "admin/book/add";
 	}
 
-	@PostMapping("addBook")
-	public String addBook(@ModelAttribute("book") Book book) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("book") Book book) {
 		bookService.save(book);
-		return "redirect:/admin/showBook";
+		return "redirect:/admin/book/";
 	}
 
-	@GetMapping("showEditBook")
-	public String showEditBook(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		Book book = bookService.getById(id);
 		model.addAttribute("book", book);
-		return "admin/book/showEditBook";
+		return "admin/book/edit";
 	}
 
-	@PostMapping("editBook")
+	@PostMapping("edit")
 	public String editBook(@ModelAttribute("book") Book book) {
 		bookService.update(book);
-		return "redirect:/admin/showBook";
+		return "redirect:/admin/book/";
 	}
 
-	@GetMapping("deleteBook")
-	public String deleteBook(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		bookService.deleteById(id);
-		return "redirect:/admin/showBook";
+		return "redirect:/admin/book/";
 	}
 }

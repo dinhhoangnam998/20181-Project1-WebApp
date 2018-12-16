@@ -18,26 +18,31 @@ public class SignUpController {
 	@Autowired
 	private SignUpService signUpService;
 	
-	@GetMapping("showSignUp")
-	public String showSignUp(Model model) {
+	@GetMapping("signUp")
+	public String signUp(Model model) {
 		model.addAttribute("user", new User());
-		return "user/showSignUp";
+		return "user/signUp";
 	}
 	
 	@PostMapping("signUp")
 	public String signUp(@ModelAttribute("user") User user, Model model) {
 		int retvl = signUpService.signUp(user);
 		if (retvl == -1) {
-			return "redirect:/user/showSignUpSuccess";
+			return "redirect:/user/signUpSuccess";
 		}
 		
-		model.addAttribute("retvl", retvl);
-		return "redirect:/user/showSignUpFailure";
+		model.addAttribute("errorCode", retvl);
+		return "redirect:/user/signUpFailure";
 	}
 	
-	@GetMapping("showSignUpSuccess")
+	@GetMapping("signUpSuccess")
 	public String showSignUpSuccess(Model model) {
-		return "user/showSignUpSuccess";
+		return "user/signUpSuccess";
+	}
+	
+	@GetMapping("showSignUpFailure")
+	public String showSignUpFailure(Model model) {
+		return "user/signUpFailure";
 	}
 	
 }

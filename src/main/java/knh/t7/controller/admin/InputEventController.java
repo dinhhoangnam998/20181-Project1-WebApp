@@ -13,47 +13,49 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import knh.t7.model.InputEvent;
 import knh.t7.service.admin.InputEventService;
+
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/inputEvent/")
 public class InputEventController {
+
 	@Autowired
 	private InputEventService inputEventService;
 
-	@GetMapping(value = { "showInputEvent", "inputEvent" })
-	public String showInputEvent(Model model) {
-		List<InputEvent> inputEventList = inputEventService.getAll();
-		model.addAttribute("inputEventList", inputEventList);
-		return "admin/inputEvent/showInputEvent";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<InputEvent> listInputEvent = inputEventService.getAll();
+		model.addAttribute("listInputEvent", listInputEvent);
+		return "admin/inputEvent/show";
 	}
 
-	@GetMapping("showAddInputEvent")
-	public String showAddInputEvent(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("inputEvent", new InputEvent());
-		return "admin/inputEvent/showAddInputEvent";
+		return "admin/inputEvent/add";
 	}
 
-	@PostMapping("addInputEvent")
-	public String addInputEvent(@ModelAttribute("inputEvent") InputEvent inputEvent) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("inputEvent") InputEvent inputEvent) {
 		inputEventService.save(inputEvent);
-		return "redirect:/admin/showInputEvent";
+		return "redirect:/admin/inputEvent/";
 	}
 
-	@GetMapping("showEditInputEvent")
-	public String showEditInputEvent(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		InputEvent inputEvent = inputEventService.getById(id);
 		model.addAttribute("inputEvent", inputEvent);
-		return "admin/inputEvent/showEditInputEvent";
+		return "admin/inputEvent/edit";
 	}
 
-	@PostMapping("editInputEvent")
+	@PostMapping("edit")
 	public String editInputEvent(@ModelAttribute("inputEvent") InputEvent inputEvent) {
 		inputEventService.update(inputEvent);
-		return "redirect:/admin/showInputEvent";
+		return "redirect:/admin/inputEvent/";
 	}
 
-	@GetMapping("deleteInputEvent")
-	public String deleteInputEvent(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		inputEventService.deleteById(id);
-		return "redirect:/admin/showInputEvent";
+		return "redirect:/admin/inputEvent/";
 	}
 }

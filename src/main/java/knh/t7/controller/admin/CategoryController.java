@@ -15,46 +15,47 @@ import knh.t7.model.Category;
 import knh.t7.service.admin.CategoryService;
 
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/category/")
 public class CategoryController {
+
 	@Autowired
 	private CategoryService categoryService;
 
-	@GetMapping(value = { "showCategory", "category" })
-	public String showCategory(Model model) {
-		List<Category> categoryList = categoryService.getAll();
-		model.addAttribute("categoryList", categoryList);
-		return "admin/category/showCategory";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<Category> listCategory = categoryService.getAll();
+		model.addAttribute("listCategory", listCategory);
+		return "admin/category/show";
 	}
 
-	@GetMapping("showAddCategory")
-	public String showAddCategory(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("category", new Category());
-		return "admin/category/showAddCategory";
+		return "admin/category/add";
 	}
 
-	@PostMapping("addCategory")
-	public String addCategory(@ModelAttribute("category") Category category) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("category") Category category) {
 		categoryService.save(category);
-		return "redirect:/admin/showCategory";
+		return "redirect:/admin/category/";
 	}
 
-	@GetMapping("showEditCategory")
-	public String showEditCategory(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		Category category = categoryService.getById(id);
 		model.addAttribute("category", category);
-		return "admin/category/showEditCategory";
+		return "admin/category/edit";
 	}
 
-	@PostMapping("editCategory")
+	@PostMapping("edit")
 	public String editCategory(@ModelAttribute("category") Category category) {
 		categoryService.update(category);
-		return "redirect:/admin/showCategory";
+		return "redirect:/admin/category/";
 	}
 
-	@GetMapping("deleteCategory")
-	public String deleteCategory(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		categoryService.deleteById(id);
-		return "redirect:/admin/showCategory";
+		return "redirect:/admin/category/";
 	}
 }

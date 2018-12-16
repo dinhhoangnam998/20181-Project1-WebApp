@@ -13,47 +13,49 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import knh.t7.model.SaleEvent;
 import knh.t7.service.admin.SaleEventService;
+
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/saleEvent/")
 public class SaleEventController {
+
 	@Autowired
 	private SaleEventService saleEventService;
 
-	@GetMapping(value = { "showSaleEvent", "saleEvent" })
-	public String showSaleEvent(Model model) {
-		List<SaleEvent> saleEventList = saleEventService.getAll();
-		model.addAttribute("saleEventList", saleEventList);
-		return "admin/saleEvent/showSaleEvent";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<SaleEvent> listSaleEvent = saleEventService.getAll();
+		model.addAttribute("listSaleEvent", listSaleEvent);
+		return "admin/saleEvent/show";
 	}
 
-	@GetMapping("showAddSaleEvent")
-	public String showAddSaleEvent(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("saleEvent", new SaleEvent());
-		return "admin/saleEvent/showAddSaleEvent";
+		return "admin/saleEvent/add";
 	}
 
-	@PostMapping("addSaleEvent")
-	public String addSaleEvent(@ModelAttribute("saleEvent") SaleEvent saleEvent) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("saleEvent") SaleEvent saleEvent) {
 		saleEventService.save(saleEvent);
-		return "redirect:/admin/showSaleEvent";
+		return "redirect:/admin/saleEvent/";
 	}
 
-	@GetMapping("showEditSaleEvent")
-	public String showEditSaleEvent(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		SaleEvent saleEvent = saleEventService.getById(id);
 		model.addAttribute("saleEvent", saleEvent);
-		return "admin/saleEvent/showEditSaleEvent";
+		return "admin/saleEvent/edit";
 	}
 
-	@PostMapping("editSaleEvent")
+	@PostMapping("edit")
 	public String editSaleEvent(@ModelAttribute("saleEvent") SaleEvent saleEvent) {
 		saleEventService.update(saleEvent);
-		return "redirect:/admin/showSaleEvent";
+		return "redirect:/admin/saleEvent/";
 	}
 
-	@GetMapping("deleteSaleEvent")
-	public String deleteSaleEvent(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		saleEventService.deleteById(id);
-		return "redirect:/admin/showSaleEvent";
+		return "redirect:/admin/saleEvent/";
 	}
 }

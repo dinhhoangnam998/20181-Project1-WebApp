@@ -15,47 +15,47 @@ import knh.t7.model.Author;
 import knh.t7.service.admin.AuthorService;
 
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/author/")
 public class AuthorController {
 
 	@Autowired
 	private AuthorService authorService;
 
-	@GetMapping(value = { "showAuthor", "author" })
-	public String showAuthor(Model model) {
-		List<Author> authorList = authorService.getAll();
-		model.addAttribute("authorList", authorList);
-		return "admin/author/showAuthor";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<Author> listAuthor = authorService.getAll();
+		model.addAttribute("listAuthor", listAuthor);
+		return "admin/author/show";
 	}
 
-	@GetMapping("showAddAuthor")
-	public String showAddAuthor(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("author", new Author());
-		return "admin/author/showAddAuthor";
+		return "admin/author/add";
 	}
 
-	@PostMapping("addAuthor")
-	public String addAuthor(@ModelAttribute("author") Author author) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("author") Author author) {
 		authorService.save(author);
-		return "redirect:/admin/showAuthor";
+		return "redirect:/admin/author/";
 	}
 
-	@GetMapping("showEditAuthor")
-	public String showEditAuthor(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		Author author = authorService.getById(id);
 		model.addAttribute("author", author);
-		return "admin/author/showEditAuthor";
+		return "admin/author/edit";
 	}
 
-	@PostMapping("editAuthor")
+	@PostMapping("edit")
 	public String editAuthor(@ModelAttribute("author") Author author) {
 		authorService.update(author);
-		return "redirect:/admin/showAuthor";
+		return "redirect:/admin/author/";
 	}
 
-	@GetMapping("deleteAuthor")
-	public String deleteAuthor(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		authorService.deleteById(id);
-		return "redirect:/admin/showAuthor";
+		return "redirect:/admin/author/";
 	}
 }

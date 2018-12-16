@@ -15,47 +15,47 @@ import knh.t7.model.Creation;
 import knh.t7.service.admin.CreationService;
 
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/creation/")
 public class CreationController {
+
 	@Autowired
 	private CreationService creationService;
 
-
-	@GetMapping(value = { "showCreation", "creation" })
-	public String showCreation(Model model) {
-		List<Creation> creationList = creationService.getAll();
-		model.addAttribute("creationList", creationList);
-		return "admin/creation/showCreation";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<Creation> listCreation = creationService.getAll();
+		model.addAttribute("listCreation", listCreation);
+		return "admin/creation/show";
 	}
 
-	@GetMapping("showAddCreation")
-	public String showAddCreation(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("creation", new Creation());
-		return "admin/creation/showAddCreation";
+		return "admin/creation/add";
 	}
 
-	@PostMapping("addCreation")
-	public String addCreation(@ModelAttribute("creation") Creation creation) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("creation") Creation creation) {
 		creationService.save(creation);
-		return "redirect:/admin/showCreation";
+		return "redirect:/admin/creation/";
 	}
 
-	@GetMapping("showEditCreation")
-	public String showEditCreation(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		Creation creation = creationService.getById(id);
 		model.addAttribute("creation", creation);
-		return "admin/creation/showEditCreation";
+		return "admin/creation/edit";
 	}
 
-	@PostMapping("editCreation")
+	@PostMapping("edit")
 	public String editCreation(@ModelAttribute("creation") Creation creation) {
 		creationService.update(creation);
-		return "redirect:/admin/showCreation";
+		return "redirect:/admin/creation/";
 	}
 
-	@GetMapping("deleteCreation")
-	public String deleteCreation(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		creationService.deleteById(id);
-		return "redirect:/admin/showCreation";
+		return "redirect:/admin/creation/";
 	}
 }

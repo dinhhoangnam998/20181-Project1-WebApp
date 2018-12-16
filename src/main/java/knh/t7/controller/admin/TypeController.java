@@ -15,47 +15,47 @@ import knh.t7.model.Type;
 import knh.t7.service.admin.TypeService;
 
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/type/")
 public class TypeController {
 
 	@Autowired
 	private TypeService typeService;
 
-	@GetMapping(value = { "showType", "type" })
-	public String showType(Model model) {
-		List<Type> typeList = typeService.getAll();
-		model.addAttribute("typeList", typeList);
-		return "admin/type/showType";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<Type> listType = typeService.getAll();
+		model.addAttribute("listType", listType);
+		return "admin/type/show";
 	}
 
-	@GetMapping("showAddType")
-	public String showAddType(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("type", new Type());
-		return "admin/type/showAddType";
+		return "admin/type/add";
 	}
 
-	@PostMapping("addType")
-	public String addType(@ModelAttribute("type") Type type) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("type") Type type) {
 		typeService.save(type);
-		return "redirect:/admin/showType";
+		return "redirect:/admin/type/";
 	}
 
-	@GetMapping("showEditType")
-	public String showEditType(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		Type type = typeService.getById(id);
 		model.addAttribute("type", type);
-		return "admin/type/showEditType";
+		return "admin/type/edit";
 	}
 
-	@PostMapping("editType")
+	@PostMapping("edit")
 	public String editType(@ModelAttribute("type") Type type) {
 		typeService.update(type);
-		return "redirect:/admin/showType";
+		return "redirect:/admin/type/";
 	}
 
-	@GetMapping("deleteType")
-	public String deleteType(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		typeService.deleteById(id);
-		return "redirect:/admin/showType";
+		return "redirect:/admin/type/";
 	}
 }

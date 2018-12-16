@@ -13,47 +13,49 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import knh.t7.model.Book_InputEvent;
 import knh.t7.service.admin.Book_InputEventService;
+
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/book_InputEvent/")
 public class Book_InputEventController {
+
 	@Autowired
 	private Book_InputEventService book_InputEventService;
 
-	@GetMapping(value = { "showBook_InputEvent", "book_InputEvent" })
-	public String showBook_InputEvent(Model model) {
-		List<Book_InputEvent> book_InputEventList = book_InputEventService.getAll();
-		model.addAttribute("book_InputEventList", book_InputEventList);
-		return "admin/book_InputEvent/showBook_InputEvent";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<Book_InputEvent> listBook_InputEvent = book_InputEventService.getAll();
+		model.addAttribute("listBook_InputEvent", listBook_InputEvent);
+		return "admin/book_InputEvent/show";
 	}
 
-	@GetMapping("showAddBook_InputEvent")
-	public String showAddBook_InputEvent(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("book_InputEvent", new Book_InputEvent());
-		return "admin/book_InputEvent/showAddBook_InputEvent";
+		return "admin/book_InputEvent/add";
 	}
 
-	@PostMapping("addBook_InputEvent")
-	public String addBook_InputEvent(@ModelAttribute("book_InputEvent") Book_InputEvent book_InputEvent) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("book_InputEvent") Book_InputEvent book_InputEvent) {
 		book_InputEventService.save(book_InputEvent);
-		return "redirect:/admin/showBook_InputEvent";
+		return "redirect:/admin/book_InputEvent/";
 	}
 
-	@GetMapping("showEditBook_InputEvent")
-	public String showEditBook_InputEvent(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		Book_InputEvent book_InputEvent = book_InputEventService.getById(id);
 		model.addAttribute("book_InputEvent", book_InputEvent);
-		return "admin/book_InputEvent/showEditBook_InputEvent";
+		return "admin/book_InputEvent/edit";
 	}
 
-	@PostMapping("editBook_InputEvent")
+	@PostMapping("edit")
 	public String editBook_InputEvent(@ModelAttribute("book_InputEvent") Book_InputEvent book_InputEvent) {
 		book_InputEventService.update(book_InputEvent);
-		return "redirect:/admin/showBook_InputEvent";
+		return "redirect:/admin/book_InputEvent/";
 	}
 
-	@GetMapping("deleteBook_InputEvent")
-	public String deleteBook_InputEvent(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		book_InputEventService.deleteById(id);
-		return "redirect:/admin/showBook_InputEvent";
+		return "redirect:/admin/book_InputEvent/";
 	}
 }

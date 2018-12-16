@@ -17,9 +17,9 @@ public class SignInController {
 	@Autowired
 	private SignInService signInService;
 
-	@GetMapping("showSignIn")
+	@GetMapping("signIn")
 	public String showSignIn(Model model) {
-		return "/user/showSignIn";
+		return "/user/signIn";
 	}
 
 	@PostMapping("signIn")
@@ -28,13 +28,13 @@ public class SignInController {
 		if (signInService.checkSignIn(username, password)) {
 			return "redirect:/";
 		} else {
-			return "redirect:/user/showSignInFailure";
+			return "redirect:/user/signInFailure";
 		}
 
 	}
 	
-	@GetMapping("showSignInFailure")
+	@GetMapping("signInFailure")
 	public String showSignInFailure(Model model) {
-		return "/user/showSignInFailure";
+		return "/user/signInFailure";
 	}
 }

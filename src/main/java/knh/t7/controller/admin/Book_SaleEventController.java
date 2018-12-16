@@ -13,47 +13,49 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import knh.t7.model.Book_SaleEvent;
 import knh.t7.service.admin.Book_SaleEventService;
+
 @Controller
-@RequestMapping("admin/")
+@RequestMapping("admin/book_SaleEvent/")
 public class Book_SaleEventController {
+
 	@Autowired
 	private Book_SaleEventService book_SaleEventService;
 
-	@GetMapping(value = { "showBook_SaleEvent", "book_SaleEvent" })
-	public String showBook_SaleEvent(Model model) {
-		List<Book_SaleEvent> book_SaleEventList = book_SaleEventService.getAll();
-		model.addAttribute("book_SaleEventList", book_SaleEventList);
-		return "admin/book_SaleEvent/showBook_SaleEvent";
+	@GetMapping(value= {"", "show"})
+	public String show(Model model) {
+		List<Book_SaleEvent> listBook_SaleEvent = book_SaleEventService.getAll();
+		model.addAttribute("listBook_SaleEvent", listBook_SaleEvent);
+		return "admin/book_SaleEvent/show";
 	}
 
-	@GetMapping("showAddBook_SaleEvent")
-	public String showAddBook_SaleEvent(Model model) {
+	@GetMapping("add")
+	public String add(Model model) {
 		model.addAttribute("book_SaleEvent", new Book_SaleEvent());
-		return "admin/book_SaleEvent/showAddBook_SaleEvent";
+		return "admin/book_SaleEvent/add";
 	}
 
-	@PostMapping("addBook_SaleEvent")
-	public String addBook_SaleEvent(@ModelAttribute("book_SaleEvent") Book_SaleEvent book_SaleEvent) {
+	@PostMapping("add")
+	public String add(@ModelAttribute("book_SaleEvent") Book_SaleEvent book_SaleEvent) {
 		book_SaleEventService.save(book_SaleEvent);
-		return "redirect:/admin/showBook_SaleEvent";
+		return "redirect:/admin/book_SaleEvent/";
 	}
 
-	@GetMapping("showEditBook_SaleEvent")
-	public String showEditBook_SaleEvent(@RequestParam("id") int id, Model model) {
+	@GetMapping("edit")
+	public String edit(@RequestParam("id") int id, Model model) {
 		Book_SaleEvent book_SaleEvent = book_SaleEventService.getById(id);
 		model.addAttribute("book_SaleEvent", book_SaleEvent);
-		return "admin/book_SaleEvent/showEditBook_SaleEvent";
+		return "admin/book_SaleEvent/edit";
 	}
 
-	@PostMapping("editBook_SaleEvent")
+	@PostMapping("edit")
 	public String editBook_SaleEvent(@ModelAttribute("book_SaleEvent") Book_SaleEvent book_SaleEvent) {
 		book_SaleEventService.update(book_SaleEvent);
-		return "redirect:/admin/showBook_SaleEvent";
+		return "redirect:/admin/book_SaleEvent/";
 	}
 
-	@GetMapping("deleteBook_SaleEvent")
-	public String deleteBook_SaleEvent(@RequestParam("id") int id) {
+	@GetMapping("delete")
+	public String delete(@RequestParam("id") int id) {
 		book_SaleEventService.deleteById(id);
-		return "redirect:/admin/showBook_SaleEvent";
+		return "redirect:/admin/book_SaleEvent/";
 	}
 }
