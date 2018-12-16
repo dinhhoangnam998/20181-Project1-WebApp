@@ -25,7 +25,7 @@
   
 </head>
 <body>
-  <section class="menu cid-rbKh5mu8YP" once="menu" id="menu1-19">
+  <section class="menu cid-rcpkKuyRtB" once="menu" id="menu1-1w">
 
     
 
@@ -41,37 +41,26 @@
         <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="index">
+                    <a href="/Project1WebApplication/index">
                          <img src="<%=request.getContextPath()%>/resources/assets/images/4606293-1-122x132.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index">
-                        BookShop</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="/Project1WebApplication/index">MangaWorld</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="showsignin">Sign In</a>
+                    <a class="nav-link link text-white display-4" href="/Project1WebApplication/user/signIn">Sign In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="showsignup">Sign Up</a>
+                    <a class="nav-link link text-white display-4" href="/Project1WebApplication/user/signUp">Sign Up</a>
                 </li></ul>
             
         </div>
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/m">web design templates</a></section><section class="carousel slide cid-rb5qN97dyx" data-interval="false" id="slider2-s">
-
-    
-    <div class="container content-slider">
-        <div class="content-slider-wrap">
-            <div><div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="4000"><ol class="carousel-indicators"><li data-app-prevent-settings="" data-target="#slider2-s" data-slide-to="0"></li><li data-app-prevent-settings="" data-target="#slider2-s" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider2-s" data-slide-to="2"></li><li data-app-prevent-settings="" data-target="#slider2-s" data-slide-to="3"></li><li data-app-prevent-settings="" data-target="#slider2-s" class=" active" data-slide-to="4"></li></ol><div class="carousel-inner" role="listbox"><div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/1-900x1276.jpg);"><div class="container container-slide"><div class="image_wrapper"><img src="<%=request.getContextPath()%>/resources/assets/images/1-900x1276.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-center"></div></div></div></div></div><div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/3-900x1280.jpg);"><div class="container container-slide"><div class="image_wrapper"><img src="<%=request.getContextPath()%>/resources/assets/images/3-900x1280.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-center"></div></div></div></div></div><div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/2-1-666x826.jpg);"><div class="container container-slide"><div class="image_wrapper"><img src="<%=request.getContextPath()%>/resources/assets/images/2-1-666x826.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-center"></div></div></div></div></div><div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/7-1385x2000.jpg);"><div class="container container-slide"><div class="image_wrapper"><img src="<%=request.getContextPath()%>/resources/assets/images/7-1385x2000.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-center"></div></div></div></div></div><div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(assets/images/5-900x1280.jpg);"><div class="container container-slide"><div class="image_wrapper"><img src="<%=request.getContextPath()%>/resources/assets/images/5-900x1280.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-center"></div></div></div></div></div></div><a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#slider2-s"><span aria-hidden="true" class="mbri-left mbr-iconfont"></span><span class="sr-only">Previous</span></a><a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next" href="#slider2-s"><span aria-hidden="true" class="mbri-right mbr-iconfont"></span><span class="sr-only">Next</span></a></div></div> 
-        </div>
-    </div>
-</section>
-
-<section class="features11 cid-rb5pG5Mgc2" id="features11-p">
+<section class="engine"><a href="https://mobirise.info/g">how to build your own website for free</a></section><section class="features11 cid-rb5pG5Mgc2" id="features11-p">
 
     
 
@@ -138,66 +127,61 @@
     </div>          
 </section>
 
-<section class="footer4 cid-rbKguV0leM" id="footer4-16">
+<section class="cid-rcp8Qq2XVG" id="footer1-1q">
 
     
 
     
 
     <div class="container">
-        <div class="media-container-row content mbr-white">
-            <div class="col-md-3 col-sm-4">
-                <div class="mb-3 img-logo">
-                    <a href="https://mobirise.co/">
-                        <img src="<%=request.getContextPath()%>/resources/assets/images/logo2.png" alt="Mobirise">
+        <div class="media-container-row content text-white">
+            <div class="col-12 col-md-3">
+                <div class="media-wrap">
+                    <a href="/Project1WebApplication/index">
+                        <img src="<%=request.getContextPath()%>/resources/assets/images/4606293-1-192x207.jpg" alt="Mobirise" title="">
                     </a>
                 </div>
-                <p class="mb-3 mbr-fonts-style foot-title display-7">
-                    MOBIRISE
-                </p>
-                <p class="mbr-text mbr-fonts-style mbr-links-column display-7">
-                    <a href="#" class="text-white">About Us</a>
-                    <br><a href="#" class="text-white">Services</a>
-                    <br><a href="#" class="text-white">Selected Work</a>
-                    <br><a href="#" class="text-white">Get In Touch</a>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Address
+                </h5>
+                <p class="mbr-text">
+                    1234 Street Name
+                    <br>City, AA 99999
                 </p>
             </div>
-            <div class="col-md-4 col-sm-8">
-                <p class="mb-4 foot-title mbr-fonts-style display-7">
-                    RECENT NEWS
-                </p>
-                <p class="mbr-text mbr-fonts-style foot-text display-7">
-                    Footer with solid color background and a contact form, Easily add subscribe and contact forms without any server-side integration.
-                    <br>
-                    <br>Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface.
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Contacts
+                </h5>
+                <p class="mbr-text">
+                    Email: support@mobirise.com
+                    <br>Phone: +1 (0) 000 0000 001
+                    <br>Fax: +1 (0) 000 0000 002
                 </p>
             </div>
-            <div class="col-md-4 offset-md-1 col-sm-12">
-                <p class="mb-4 foot-title mbr-fonts-style display-7">
-                    SUBSCRIBE
-                </p>
-                <p class="mbr-text mbr-fonts-style form-text display-7">
-                    Get monthly updates and free resources.
-                </p>
-                <div class="media-container-column" data-form-type="formoid">
-                    <div data-form-alert="" hidden="" class="align-center">
-                        Thanks for filling out the form!
-                    </div>
-
-                    <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
-                        <input type="hidden" value="wF77Aw7lUFxtaOfNuxKSFVnopOIm6DxNSZR+54/3vBRW0Soc9tJsmRr34BPi2o9srBE+3Uph+6TXkZ2vE6NmqvbaS+DB+9BsUfUk0XZhW3GxQVHR68RCbkcRa5yPqLj4" data-form-email="true">
-                        <div class="form-group">
-                            <input type="email" class="form-control input-sm input-inverse my-2" name="email" required="" data-form-field="Email" placeholder="Email" id="email-footer4-16">
-                        </div>
-                        <div class="input-group-btn m-2">
-                            <button href="" class="btn btn-primary display-4" type="submit" role="button">Subscribe</button>
-                        </div>
-                    </form>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Links
+                </h5>
+                <p class="mbr-text">Manga news<br>Top manga of week<br>Anime movie</p>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-sm-12">
+                    <hr>
                 </div>
-                <p class="mb-4 mbr-fonts-style foot-title display-7">
-                    CONNECT WITH US
-                </p>
-                <div class="social-list pl-0 mb-0">
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-sm-6 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        © Copyright 2017 Mobirise - All Rights Reserved
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-list align-right">
                         <div class="soc-item">
                             <a href="https://twitter.com/mobirise" target="_blank">
                                 <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
@@ -228,20 +212,7 @@
                                 <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-lower">
-            <div class="media-container-row">
-                <div class="col-sm-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="media-container-row mbr-white">
-                <div class="col-sm-12 copyright">
-                    <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2017 Mobirise - All Rights Reserved
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,12 +227,7 @@
   <script src="<%=request.getContextPath()%>/resources/assets/smoothscroll/smooth-scroll.js"></script>
   <script src="<%=request.getContextPath()%>/resources/assets/dropdown/js/script.min.js"></script>
   <script src="<%=request.getContextPath()%>/resources/assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
   <script src="<%=request.getContextPath()%>/resources/assets/theme/js/script.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/slidervideo/script.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/formoid/formoid.min.js"></script>
   
   
 </body>
