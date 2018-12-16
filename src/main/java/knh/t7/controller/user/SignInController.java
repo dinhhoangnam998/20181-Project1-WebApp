@@ -34,7 +34,7 @@ public class SignInController {
 	}
 	
 	@GetMapping("signInFailure")
-	public String showSignInFailure(Model model) {
+	public String signInFailure(Model model) {
 		return "/user/signInFailure";
 	}
 }

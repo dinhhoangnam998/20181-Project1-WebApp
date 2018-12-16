@@ -34,13 +34,13 @@ public class EditController {
 		}
 		else {
 			model.addAttribute("errorCode", retvl);
-			return "redirect:/user/editProfileFailure";
+			return "redirect:/user/editFailure";
 		}
 	}
 	
-	@GetMapping("editProfileFailure")
-	public String editProfileFailure(Model model) {
-		return "user/editProfileFailure";
+	@GetMapping("editFailure")
+	public String editFailure(Model model) {
+		return "user/editFailure";
 	}
 	
 }

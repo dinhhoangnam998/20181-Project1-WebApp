@@ -16,7 +16,7 @@ public class DeleteController {
 	@Autowired
 	private DeleteService deleteService;
 	
-	@GetMapping("deleteAcount")
+	@GetMapping("delete")
 	public String deleteAcount(@RequestParam("id") int id, Model model) {
 		deleteService.deleteUserById(id);
 		return "redirect:/user/showSignUp";

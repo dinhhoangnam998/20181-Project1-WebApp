@@ -28,19 +28,19 @@ public class SignUpController {
 	public String signUp(@ModelAttribute("user") User user, Model model) {
 		int retvl = signUpService.signUp(user);
 		if (retvl == -1) {
-			return "redirect:/user/signUpSuccess";
+			return "redirect:/user/info" + "?id=" + user.getId();
 		}
 		
 		model.addAttribute("errorCode", retvl);
 		return "redirect:/user/signUpFailure";
 	}
 	
-	@GetMapping("signUpSuccess")
-	public String showSignUpSuccess(Model model) {
-		return "user/signUpSuccess";
-	}
+//	@GetMapping("signUpSuccess")
+//	public String showSignUpSuccess(Model model) {
+//		return "user/signUpSuccess";
+//	}
 	
-	@GetMapping("showSignUpFailure")
+	@GetMapping("signUpFailure")
 	public String showSignUpFailure(Model model) {
 		return "user/signUpFailure";
 	}

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="<%=request.getContextPath()%>/user/showSignIn">Sign In</a>
+<a href="<%=request.getContextPath()%>/user/signIn">Sign In</a>
 </body>
 </html>

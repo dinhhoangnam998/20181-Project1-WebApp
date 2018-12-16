@@ -44,5 +44,7 @@
 		
 		
 	</table>
+	<a href="<%=request.getContextPath()%>/user/signIn">Sign In</a>
+	
 </body>
 </html>

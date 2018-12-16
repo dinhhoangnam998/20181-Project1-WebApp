@@ -10,7 +10,7 @@
 <body>
 	<h3>Welcome to edit profile</h3>
 	<form:form method="POST"
-		action="/Project1WebApplication/user/editProfile"
+		action="/Project1WebApplication/user/edit"
 		modelAttribute="user">
 		<table>
 
