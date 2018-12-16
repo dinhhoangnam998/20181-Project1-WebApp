@@ -89,11 +89,11 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <img src="<%=request.getContextPath()%>/resources/assets/images/4-676x947.jpg" alt="Mobirise" title="">
+                        <img src="<%=request.getContextPath()%>/resources/assets/images/4-676x947.jpg" height="469" width="670" alt="Mobirise" title="">
                     </div>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style display-7">Akame ga KILL!</h4>
-                        <p class="mbr-text mbr-fonts-style display-7">
+                        <p class="mbr-text mbr-fonts-style display-7" style="height:193px; width:246px;">
                             Akame ga KILL! (アカメが斬る! Akame ga kiru?) là một series manga shōnen được viết bởi Takahiro, minh họa bởi Tetsuya Tashiro, và đăng hằng kỳ trong Weekly Gangan Joker.</p>
                     </div>
                     <div class="mbr-section-btn text-center"><a href="/Project1WebApplication/book/info?id=${book1.id}" class="btn btn-primary display-4" target="_blank">
@@ -105,11 +105,11 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <img src="<%=request.getContextPath()%>/resources/assets/images/1-636x869.jpg" alt="Mobirise" title="">
+                        <img src="<%=request.getContextPath()%>/resources/assets/images/1-636x869.jpg" height="469" width="670" alt="Mobirise" title="">
                     </div>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style display-7">Tokyo Ghoul</h4>
-                        <p class="mbr-text mbr-fonts-style display-7">
+                        <p class="mbr-text mbr-fonts-style display-7" style="height:193px; width:246px;">
                             Tokyo Ghoul (Nhật: 東京喰種-トーキョーグール- (Ðông Kinh Thực Chủng) Hepburn: Tōkyō Gūru?, Ngạ quỷ ở Tokyo) là bộ manga dài kỳ do Sui Ishida sáng tác.</p>
                     </div>
                     <div class="mbr-section-btn text-center"><a href="/Project1WebApplication/book/info?id=${book2.id}" class="btn btn-primary display-4" target="_blank">
@@ -121,11 +121,11 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <img src="<%=request.getContextPath()%>/resources/assets/images/5-676x966.png" alt="Mobirise" title="">
+                        <img src="<%=request.getContextPath()%>/resources/assets/images/5-676x966.png" height="469" width="670" alt="Mobirise" title="">
                     </div>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style display-7">Sword Art Online</h4>
-                        <p class="mbr-text mbr-fonts-style display-7">
+                        <p class="mbr-text mbr-fonts-style display-7" style="height:193px; width:246px;">
                             Sword Art Online (ソードアート・オンライン) là một bộ light novel Nhật Bản được viết bởi Reki Kawahara và được minh họa bởi abec. Bộ truyện lấy bối cảnh tương lai gần và nhiều thế giới VRMMO thực tế ảo.</p>
                     </div>
                     <div class="mbr-section-btn text-center"><a href="/Project1WebApplication/book/info?id=${book3.id}" class="btn btn-primary display-4" target="_blank">
@@ -149,13 +149,13 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <img src="<%=request.getContextPath()%>/resources/assets/images/naruto1-639x944.jpg" alt="Mobirise" title="">
+                        <img src="<%=request.getContextPath()%>/resources/assets/images/naruto1-639x944.jpg" height="469" width="670" alt="Mobirise" title="">
                     </div>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style display-7">
                             Naruto
                         </h4>
-                        <p class="mbr-text mbr-fonts-style display-7">
+                        <p class="mbr-text mbr-fonts-style display-7" style="height:193px; width:246px;">
                             Naruto (—ナルト— NARUTO?) là loạt manga Nhật Bản bằng văn bản và minh họa bởi tác giả Kishimoto Masashi, đã được dựng thành anime . Nhân vật chính là Uzumaki Naruto, một thiếu niên ồn ào, hiếu động.</p>
                     </div>
                     <div class="mbr-section-btn text-center"><a href="/Project1WebApplication/book/info?id=${book4.id}" class="btn btn-primary display-4" target="_blank">
@@ -167,13 +167,13 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <img src="<%=request.getContextPath()%>/resources/assets/images/3-676x955.png" alt="Mobirise" title="">
+                        <img src="<%=request.getContextPath()%>/resources/assets/images/3-676x955.png" height="469" width="670" alt="Mobirise" title="">
                     </div>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style display-7">
                             Boruto
                         </h4>
-                        <p class="mbr-text mbr-fonts-style display-7">
+                        <p class="mbr-text mbr-fonts-style display-7" style="height:193px; width:246px;">
                             Boruto: Naruto the Movie là một bộ phim hoạt hình Nhật Bản dựa trên manga Naruto của Kishimoto Masashi. Phim là phần mở rộng hơn của Start of a New Era Project.</p>
                     </div>
                     <div class="mbr-section-btn text-center"><a href="/Project1WebApplication/book/info?id=${book5.id}" class="btn btn-primary display-4" target="_blank">
@@ -185,12 +185,12 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <img src="<%=request.getContextPath()%>/resources/assets/images/4-348x500.jpg" alt="Mobirise" title="">
+                        <img src="<%=request.getContextPath()%>/resources/assets/images/4-348x500.jpg" height="469" width="670" alt="Mobirise" title="">
                     </div>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style display-7">Black Clover
-<div><br></div></h4>
-                        <p class="mbr-text mbr-fonts-style display-7">
+						</h4>
+                        <p class="mbr-text mbr-fonts-style display-7" style="height:193px; width:246px;">
                             Black Clover (Nhật: ブラッククローバー Hepburn: Burakku Kurōbā?) là một series truyện tranh Nhật Bản shōnen được viết và minh hoạ bởi Yūki Tabata.</p>
                     </div>
                     <div class="mbr-section-btn text-center"><a href="/Project1WebApplication/book/info?id=${book6.id}" class="btn btn-primary display-4" target="_blank">
