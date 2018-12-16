@@ -14,7 +14,7 @@ import org.hibernate.annotations.Proxy;
 @Proxy(lazy = false)
 public class BillDetail {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@Column(columnDefinition = "int unsigned default 1")

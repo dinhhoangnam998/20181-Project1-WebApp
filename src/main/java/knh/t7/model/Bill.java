@@ -18,7 +18,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Proxy(lazy = false)
 public class Bill {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@Column(columnDefinition = "datetime default now()")

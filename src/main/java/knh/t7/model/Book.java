@@ -13,7 +13,7 @@ import org.hibernate.annotations.Proxy;
 @Proxy(lazy = false)
 public class Book {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@Column(columnDefinition = "varchar(511) default 'no descripton'")

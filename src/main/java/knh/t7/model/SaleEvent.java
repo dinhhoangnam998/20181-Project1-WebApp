@@ -16,7 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Proxy(lazy = false)
 public class SaleEvent {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

@@ -13,7 +13,7 @@ import org.hibernate.annotations.Proxy;
 @Proxy(lazy = false)
 public class Book_InputEvent {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@Column(nullable = false, columnDefinition = "int unsigned")

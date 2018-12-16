@@ -54,15 +54,15 @@
 			</tr>
 			<tr>
 				<td><form:label path="creation.id">Creation Id</form:label></td>
-				<td><form:input path="creation.id" type="number" /></td>
+				<td><form:input path="creation.id" type="number" value="1" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="type.id">Type Id</form:label></td>
-				<td><form:input path="type.id" type="number" /></td>
+				<td><form:input path="type.id" type="number" value="1" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="publisher.id">Publisher Id</form:label></td>
-				<td><form:input path="publisher.id" type="number" /></td>
+				<td><form:input path="publisher.id" type="number" value="1" /></td>
 			</tr>
 
 

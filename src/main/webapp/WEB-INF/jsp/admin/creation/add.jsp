@@ -24,12 +24,12 @@
 			</tr>
 			<tr>
 				<td><form:label path="category.id">Category Id</form:label></td>
-				<td><form:input path="category.id" type="number" /></td>
+				<td><form:input path="category.id" type="number" value="1" /></td>
 			</tr>
 
 			<tr>
 				<td><form:label path="author.id">Author Id</form:label></td>
-				<td><form:input path="author.id" type="number" /></td>
+				<td><form:input path="author.id" type="number" value="1" /></td>
 			</tr>
 
 			<tr>
