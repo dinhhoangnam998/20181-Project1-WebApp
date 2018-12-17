@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import knh.t7.model.User;
 import knh.t7.repository.UserJpa;
-import knh.t7.util.UserChecker;
+import knh.t7.service.UserChecker;
 
 @Service
 public class EditService {

@@ -1,4 +1,4 @@
-package knh.t7.util;
+package knh.t7.service;
 
 import java.util.Date;
 import java.util.regex.Pattern;

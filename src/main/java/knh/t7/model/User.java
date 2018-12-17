@@ -49,6 +49,8 @@ public class User {
 
 	private String phone;
 
+	private String imageurl;
+
 	@Column(columnDefinition = "int default 1")
 	private int state;
 
@@ -58,7 +60,7 @@ public class User {
 	public User() {
 		super();
 	}
-
+	
 	public User(String username, String password, String email, String fullname, int gender, Date birthday,
 			String address, String phone) {
 		super();
@@ -72,10 +74,9 @@ public class User {
 		this.phone = phone;
 	}
 
-	public User(int id, String username, String password, String email, String fullname, int gender, Date birthday,
-			String address, String phone, int state, Set<Bill> bill) {
+	public User(String username, String password, String email, String fullname, int gender, Date birthday,
+			String address, String phone, String imageurl) {
 		super();
-		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -84,6 +85,24 @@ public class User {
 		this.birthday = birthday;
 		this.address = address;
 		this.phone = phone;
+		this.imageurl = imageurl;
+	}
+
+
+	public User(int id, String username, String password, String confirmpassword, String email, String fullname,
+			int gender, Date birthday, String address, String phone, String imageurl, int state, Set<Bill> bill) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.confirmpassword = confirmpassword;
+		this.email = email;
+		this.fullname = fullname;
+		this.gender = gender;
+		this.birthday = birthday;
+		this.address = address;
+		this.phone = phone;
+		this.imageurl = imageurl;
 		this.state = state;
 		this.bill = bill;
 	}
@@ -164,6 +183,14 @@ public class User {
 		return state;
 	}
 
+	public String getImageurl() {
+		return imageurl;
+	}
+
+	public void setImageurl(String imageurl) {
+		this.imageurl = imageurl;
+	}
+
 	public void setState(int state) {
 		this.state = state;
 	}
@@ -186,9 +213,10 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", fullname=" + fullname + ", gender=" + gender + ", birthday=" + birthday + ", address=" + address
-				+ ", phone=" + phone + ", state=" + state + ", bill=" + bill + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", confirmpassword="
+				+ confirmpassword + ", email=" + email + ", fullname=" + fullname + ", gender=" + gender + ", birthday="
+				+ birthday + ", address=" + address + ", phone=" + phone + ", imageurl=" + imageurl + ", state=" + state
+				+ ", bill=" + bill + "]";
 	}
 
 }
