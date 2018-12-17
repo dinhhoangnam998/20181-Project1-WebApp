@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html >
 <head>
@@ -70,7 +70,7 @@
         <div class="col-md-12">
             <div class="media-container-row">
                 <div class="mbr-figure" style="width: 50%;">
-                    <img src="<%=request.getContextPath()%>/resources/assets/images/volume-1-952x1375.png" alt="Mobirise" title="">
+                    <img src="${book.imageurl}" alt="Mobirise" title="">
                 </div>
                 <div class=" align-left aside-content">
                     <h2 class="mbr-title pt-2 mbr-fonts-style display-2">
@@ -177,7 +177,7 @@
             <div class="media-container-row mbr-white">
                 <div class="col-sm-6 copyright">
                     <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2017 Mobirise - All Rights Reserved
+                        Â© Copyright 2017 Mobirise - All Rights Reserved
                     </p>
                 </div>
                 <div class="col-md-6">
