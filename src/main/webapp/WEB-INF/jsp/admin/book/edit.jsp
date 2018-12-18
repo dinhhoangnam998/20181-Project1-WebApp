@@ -15,10 +15,6 @@
 			<form:hidden path="id" value="${book.id}" />
 
 			<tr>
-				<td><form:label path="description">description</form:label></td>
-				<td><form:input path="description" /></td>
-			</tr>
-			<tr>
 				<td><form:label path="language">language</form:label></td>
 				<td><form:input path="language" /></td>
 			</tr>
@@ -51,20 +47,38 @@
 				<td><form:input path="coverprice" type="number" /></td>
 			</tr>
 			<tr>
+				<td><form:label path="description">description</form:label></td>
+				<td><form:input path="description" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="comment">comment</form:label></td>
+				<td><form:input path="comment" /></td>
+			</tr>
+			<tr>
 				<td><form:label path="imageurl">imageurl</form:label></td>
 				<td><form:input path="imageurl" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="creation.id">Creation Id</form:label></td>
-				<td><form:input path="creation.id" type="number" /></td>
+				<td><form:label path="creation.id">Creation</form:label></td>
+				<td><form:select path="creation.id">
+						<form:options items="${listCreation}" itemValue="id"
+							itemLabel="name" />
+					</form:select></td>
 			</tr>
+
 			<tr>
-				<td><form:label path="type.id">Type Id</form:label></td>
-				<td><form:input path="type.id" type="number" /></td>
+				<td><form:label path="type.id">Type</form:label></td>
+				<td><form:select path="type.id">
+						<form:options items="${listType}" itemValue="id" itemLabel="name" />
+					</form:select></td>
 			</tr>
+
 			<tr>
-				<td><form:label path="publisher.id">Publisher Id</form:label></td>
-				<td><form:input path="publisher.id" type="number" /></td>
+				<td><form:label path="publisher.id">Publisher</form:label></td>
+				<td><form:select path="publisher.id">
+						<form:options items="${listPublisher}" itemValue="id"
+							itemLabel="name" />
+					</form:select></td>
 			</tr>
 
 

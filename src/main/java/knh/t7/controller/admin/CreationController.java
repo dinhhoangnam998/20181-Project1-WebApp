@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import knh.t7.model.Author;
+import knh.t7.model.Category;
 import knh.t7.model.Creation;
 import knh.t7.service.admin.CreationService;
 
@@ -21,7 +23,7 @@ public class CreationController {
 	@Autowired
 	private CreationService creationService;
 
-	@GetMapping(value= {"", "show"})
+	@GetMapping(value = { "", "show" })
 	public String show(Model model) {
 		List<Creation> listCreation = creationService.getAll();
 		model.addAttribute("listCreation", listCreation);
@@ -30,7 +32,13 @@ public class CreationController {
 
 	@GetMapping("add")
 	public String add(Model model) {
-		model.addAttribute("creation", new Creation());
+		model.addAttribute("creation", new Creation("yourcreationhere", "yourdescriptionhere", 1, 1));
+
+		List<Category> listCategory = creationService.getAllCategory();
+		List<Author> listAuthor = creationService.getAllAuthor();
+
+		model.addAttribute("listCategory", listCategory);
+		model.addAttribute("listAuthor", listAuthor);
 		return "admin/creation/add";
 	}
 
@@ -44,6 +52,12 @@ public class CreationController {
 	public String edit(@RequestParam("id") int id, Model model) {
 		Creation creation = creationService.getById(id);
 		model.addAttribute("creation", creation);
+
+		List<Category> listCategory = creationService.getAllCategory();
+		List<Author> listAuthor = creationService.getAllAuthor();
+
+		model.addAttribute("listCategory", listCategory);
+		model.addAttribute("listAuthor", listAuthor);
 		return "admin/creation/edit";
 	}
 

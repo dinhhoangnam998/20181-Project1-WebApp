@@ -22,10 +22,12 @@ public class Creation {
 	private int id;
 	@Column(nullable = false, unique = true)
 	private String name;
-	
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date releasedate;
+
+	private String description;
 
 	@ManyToOne
 	private Category category = new Category();
@@ -36,42 +38,47 @@ public class Creation {
 	public Creation() {
 		super();
 	}
-	
-	public Creation(String name, int categoryId, int authorId) {
+
+	public Creation(String name, String description, int categoryId, int authorId) {
 		this();
 		this.name = name;
+		this.description = description;
 		this.category.setId(categoryId);
 		this.author.setId(authorId);
 	}
 
-	public Creation(String name, Date releasedate, int categoryId, int authorId) {
+	public Creation(String name, Date releasedate, String description, int categoryId, int authorId) {
 		this();
 		this.name = name;
 		this.releasedate = releasedate;
+		this.description = description;
 		this.category.setId(categoryId);
 		this.author.setId(authorId);
 	}
 
-	public Creation(String name, Category category, Author author) {
+	public Creation(String name, String description, Category category, Author author) {
 		super();
 		this.name = name;
+		this.description = description;
 		this.category = category;
 		this.author = author;
 	}
 
-	public Creation(String name, Date releasedate, Category category, Author author) {
+	public Creation(String name, Date releasedate, String description, Category category, Author author) {
 		super();
 		this.name = name;
 		this.releasedate = releasedate;
+		this.description = description;
 		this.category = category;
 		this.author = author;
 	}
 
-	public Creation(int id, String name, Date releasedate, Category category, Author author) {
+	public Creation(int id, String name, Date releasedate, String description, Category category, Author author) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.releasedate = releasedate;
+		this.description = description;
 		this.category = category;
 		this.author = author;
 	}
@@ -100,6 +107,14 @@ public class Creation {
 		this.releasedate = releasedate;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public Category getCategory() {
 		return category;
 	}
@@ -118,8 +133,8 @@ public class Creation {
 
 	@Override
 	public String toString() {
-		return "Creation [id=" + id + ", name=" + name + ", releasedate=" + releasedate + ", category=" + category
-				+ ", author=" + author + "]";
+		return "Creation [id=" + id + ", name=" + name + ", releasedate=" + releasedate + ", description=" + description
+				+ ", category=" + category + ", author=" + author + "]";
 	}
 
 }

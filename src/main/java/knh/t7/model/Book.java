@@ -16,9 +16,6 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(columnDefinition = "varchar(511) default 'no descripton'")
-	private String description;
-
 	@Column(nullable = false)
 	private String language;
 
@@ -41,6 +38,12 @@ public class Book {
 	@Column(nullable = false, columnDefinition = "int unsigned")
 	private int coverprice;
 
+	@Column(columnDefinition = "varchar(511) default 'no descripton'")
+	private String description;
+
+	@Column(columnDefinition = "varchar(511) default 'no descripton'")
+	private String comment;
+
 	private String imageurl;
 
 	@ManyToOne
@@ -55,37 +58,11 @@ public class Book {
 	public Book() {
 		super();
 	}
-	
-	public Book(String language, int pagenumber, int republishno, int coverprice, int creationId, int typeId,
+
+	public Book(String language, int pagenumber, int republishno, String isbn, int width, int height, int weight,
+			int coverprice, String description, String comment, String imageurl, int creationId, int typeId,
 			int publisherId) {
 		this();
-		this.language = language;
-		this.pagenumber = pagenumber;
-		this.republishno = republishno;
-		this.coverprice = coverprice;
-		this.creation.setId(creationId);
-		this.type.setId(typeId);
-		this.publisher.setId(publisherId);
-	}
-
-	public Book(String language, int pagenumber, int republishno, int coverprice, Creation creation, Type type,
-			Publisher publisher) {
-		this();
-		this.language = language;
-		this.pagenumber = pagenumber;
-		this.republishno = republishno;
-		this.coverprice = coverprice;
-		this.creation = creation;
-		this.type = type;
-		this.publisher = publisher;
-	}
-
-	public Book(int id, String description, String language, int pagenumber, int republishno, String isbn, int width,
-			int height, int weight, int coverprice, String imageurl, Creation creation, Type type,
-			Publisher publisher) {
-		super();
-		this.id = id;
-		this.description = description;
 		this.language = language;
 		this.pagenumber = pagenumber;
 		this.republishno = republishno;
@@ -94,6 +71,49 @@ public class Book {
 		this.height = height;
 		this.weight = weight;
 		this.coverprice = coverprice;
+		this.description = description;
+		this.comment = comment;
+		this.imageurl = imageurl;
+		this.creation.setId(creationId);
+		this.type.setId(typeId);
+		this.publisher.setId(publisherId);
+	}
+
+	public Book(String language, int pagenumber, int republishno, String isbn, int width, int height, int weight,
+			int coverprice, String description, String comment, String imageurl, Creation creation, Type type,
+			Publisher publisher) {
+		super();
+		this.language = language;
+		this.pagenumber = pagenumber;
+		this.republishno = republishno;
+		this.isbn = isbn;
+		this.width = width;
+		this.height = height;
+		this.weight = weight;
+		this.coverprice = coverprice;
+		this.description = description;
+		this.comment = comment;
+		this.imageurl = imageurl;
+		this.creation = creation;
+		this.type = type;
+		this.publisher = publisher;
+	}
+
+	public Book(int id, String language, int pagenumber, int republishno, String isbn, int width, int height,
+			int weight, int coverprice, String description, String comment, String imageurl, Creation creation,
+			Type type, Publisher publisher) {
+		super();
+		this.id = id;
+		this.language = language;
+		this.pagenumber = pagenumber;
+		this.republishno = republishno;
+		this.isbn = isbn;
+		this.width = width;
+		this.height = height;
+		this.weight = weight;
+		this.coverprice = coverprice;
+		this.description = description;
+		this.comment = comment;
 		this.imageurl = imageurl;
 		this.creation = creation;
 		this.type = type;
@@ -106,14 +126,6 @@ public class Book {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public String getLanguage() {
@@ -180,6 +192,22 @@ public class Book {
 		this.coverprice = coverprice;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
 	public String getImageurl() {
 		return imageurl;
 	}
@@ -214,10 +242,10 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", description=" + description + ", language=" + language + ", pagenumber="
-				+ pagenumber + ", republishno=" + republishno + ", isbn=" + isbn + ", width=" + width + ", height="
-				+ height + ", weight=" + weight + ", coverprice=" + coverprice + ", imageurl=" + imageurl
-				+ ", creation=" + creation + ", type=" + type + ", publisher=" + publisher + "]";
+		return "Book [id=" + id + ", language=" + language + ", pagenumber=" + pagenumber + ", republishno="
+				+ republishno + ", isbn=" + isbn + ", width=" + width + ", height=" + height + ", weight=" + weight
+				+ ", coverprice=" + coverprice + ", description=" + description + ", comment=" + comment + ", imageurl="
+				+ imageurl + ", creation=" + creation + ", type=" + type + ", publisher=" + publisher + "]";
 	}
 
 }

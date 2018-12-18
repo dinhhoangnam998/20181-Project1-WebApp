@@ -14,6 +14,7 @@
 		<tr>
 			<td>id</td>
 			<td>Name</td>
+			<td>Description</td>
 			<td>Release Date</td>
 			<td>Category Id</td>
 			<td>Author Id</td>
@@ -23,6 +24,7 @@
 			<tr>
 				<td>${listItem.id}</td>
 				<td>${listItem.name}</td>
+				<td>${listItem.description}</td>
 				<td>${listItem.releasedate}</td>
 				<td>${listItem.category.id}</td>
 				<td>${listItem.author.id}</td>
