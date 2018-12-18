@@ -37,7 +37,8 @@ public class PublisherController {
 	@PostMapping("add")
 	public String add(@ModelAttribute("publisher") Publisher publisher) {
 		publisherService.save(publisher);
-		return "redirect:/admin/publisher/";
+		// hereS
+		return "redirect:/admin/publisher/add";
 	}
 
 	@GetMapping("edit")

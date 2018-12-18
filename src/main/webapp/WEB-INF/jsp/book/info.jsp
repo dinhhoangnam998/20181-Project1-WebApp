@@ -8,24 +8,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.8.7, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="<%=request.getContextPath()%>/resources/assets/images/4606293-1-122x132.jpg" type="image/x-icon">
-  <meta name="description" content="Website Creator Description">
-  <title>bookinfo</title>
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/tether/tether.min.css">
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/theme/css/style.css">
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="shortcut icon" href="/Project1WebApplication/resources/assets/images/4606293-1-122x132.jpg" type="image/x-icon">
+  <meta name="description" content="Web Site Generator Description">
+  <title>BookInfo</title>
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/tether/tether.min.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/animatecss/animate.min.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/datatables/data-tables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/theme/css/style.css">
+  <link rel="stylesheet" href="/Project1WebApplication/resources/assets/mobirise/css/mbr-additional.css" type="text/css">
   
   
   
 </head>
 <body>
-  <section class="menu cid-rcpkKuyRtB" once="menu" id="menu1-1w">
+  <section class="menu cid-rcAl7okSBl" once="menu" id="menu1-6">
 
     
 
@@ -42,25 +44,44 @@
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="/Project1WebApplication/index">
-                         <img src="<%=request.getContextPath()%>/resources/assets/images/4606293-1-122x132.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
+                         <img src="/Project1WebApplication/resources/assets/images/4606293-1-122x132.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="/Project1WebApplication/index">MangaWorld</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
                     <a class="nav-link link text-white display-4" href="/Project1WebApplication/user/signIn">Sign In</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="/Project1WebApplication/user/signUp">Sign Up</a>
                 </li></ul>
-            
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-danger display-4" href="https://mobirise.co"><span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>Search</a></div>
         </div>
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/g">how to build your own website for free</a></section><section class="features11 cid-rb5pG5Mgc2" id="features11-p">
+<section class="engine"><a href="https://mobirise.info/q">free responsive web templates</a></section><section class="mbr-section content5 cid-rcvDQ46LEe" id="content5-1p">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(35, 35, 35);">
+    </div>
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">MangaWorld</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">The world of Manga and Anime<br></h3>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features11 cid-rcvlpYtjne" id="features11-r">
 
     
 
@@ -70,54 +91,41 @@
         <div class="col-md-12">
             <div class="media-container-row">
                 <div class="mbr-figure" style="width: 50%;">
-                    <img src="${book.imageurl}" alt="Mobirise" title="">
+                    <img src="/Project1WebApplication/resources/assets/images/4-714x1000.jpg" alt="Mobirise" title="">
                 </div>
                 <div class=" align-left aside-content">
                     <h2 class="mbr-title pt-2 mbr-fonts-style display-2">
-                        Image with content
-                    </h2>
+                        Creation.name</h2>
                     <div class="mbr-section-text">
-                        <p class="mbr-text mb-5 pt-3 mbr-light mbr-fonts-style display-5">
-                        Click any text or icon to edit or style it. Use the block parameters to hide/show text or icons and change media size or position.
-                        </p>
+                        <p class="mbr-text mb-5 pt-3 mbr-light mbr-fonts-style display-4">
+                        Book.description</p>
                     </div>
 
                     <div class="block-content">
                         <div class="card p-3 pr-3">
                             <div class="media">
-                                <div class=" align-self-center card-img pb-3">
-                                    <span class="mbri-extension mbr-iconfont"></span>
-                                </div>     
+                                     
                                 <div class="media-body">
-                                    <h4 class="card-title mbr-fonts-style display-7">
-                                        Over 400 Amazing Blocks
-                                    </h4>
+                                    
                                 </div>
                             </div>                
 
                             <div class="card-box">
-                                <p class="block-text mbr-fonts-style display-7">
-                                   Mobirise offers several themes that include sliders, galleries, article blocks, counters, accordions, video, animated text, live filtered tables, shop, contact forms, lightbox, testimonials, timelines, google map, progress bars and more. 
-                                </p>
+                                <p class="block-text mbr-fonts-style display-4">
+                                   Sale info</p>
                             </div>
                         </div>
 
                         <div class="card p-3 pr-3">
                             <div class="media">
-                                <div class="align-self-center card-img pb-3">
-                                    <span class="mbri-drag-n-drop2 mbr-iconfont"></span>
-                                </div>     
+                                     
                                 <div class="media-body">
-                                    <h4 class="card-title mbr-fonts-style display-7">
-                                        Easy and Simple to Use
-                                    </h4>
+                                    
                                 </div>
                             </div>                
 
                             <div class="card-box">
-                                <p class="block-text mbr-fonts-style display-7">
-                                    Cut down the development time with drag-and-drop website builder. Drop the blocks into the page, edit content inline and publish - no technical skills required.
-                                </p>
+                                <p class="block-text mbr-fonts-style display-7">Add to Cart and Quantity</p>
                             </div>
                         </div>
                     </div>
@@ -127,7 +135,84 @@
     </div>          
 </section>
 
-<section class="cid-rcp8Qq2XVG" id="footer1-1q">
+<section class="section-table cid-rcvlxFNhl9" id="table1-s">
+
+  
+  
+  <div class="container container-table">
+      <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">
+          Table
+      </h2>
+      
+      <div class="table-wrapper">
+        <div class="container">
+          
+        </div>
+
+        <div class="container scroll">
+          <table class="table" cellspacing="0">
+            <thead>
+              <tr class="table-heads ">
+                  
+                  
+                  
+                  
+              <th class="head-item mbr-fonts-style display-7">
+                      NAME</th><th class="head-item mbr-fonts-style display-7">
+                      AGE</th><th class="head-item mbr-fonts-style display-7">
+                      DATE</th><th class="head-item mbr-fonts-style display-7">
+                      SALARY</th></tr>
+            </thead>
+
+            <tbody>
+              
+              
+              
+              
+            <tr> 
+                
+                
+                
+                
+              <td class="body-item mbr-fonts-style display-7">Jeanna Schmal</td><td class="body-item mbr-fonts-style display-7">44</td><td class="body-item mbr-fonts-style display-7">2016-10-17</td><td class="body-item mbr-fonts-style display-7">$317.000</td></tr><tr>
+                
+                
+                
+                
+              <td class="body-item mbr-fonts-style display-7">Caren Rials</td><td class="body-item mbr-fonts-style display-7">35</td><td class="body-item mbr-fonts-style display-7">2013-04-12</td><td class="body-item mbr-fonts-style display-7">$445.500</td></tr><tr>
+                
+                
+                
+                
+              <td class="body-item mbr-fonts-style display-7">Leon Rogol</td><td class="body-item mbr-fonts-style display-7">66</td><td class="body-item mbr-fonts-style display-7">2016-05-22</td><td class="body-item mbr-fonts-style display-7">$152.558</td></tr><tr>
+                
+                
+                
+                
+              <td class="body-item mbr-fonts-style display-7">Shala Barrera</td><td class="body-item mbr-fonts-style display-7">70</td><td class="body-item mbr-fonts-style display-7">2016-05-15</td><td class="body-item mbr-fonts-style display-7">$459.146</td></tr></tbody>
+          </table>
+        </div>
+        <div class="container table-info-container">
+          
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rcvwU0GxC8" id="content2-1a">
+
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
+                <blockquote><strong>Book.comment</strong> Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. Mobirise Website Builder creates responsive, retina and <strong>mobile friendly websites</strong> in a few clicks. Mobirise is one of the easiest website development tools <a href="https://mobirise.co/">available</a> today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.</blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rcvDPjrfbw" id="footer1-1o">
 
     
 
@@ -138,7 +223,7 @@
             <div class="col-12 col-md-3">
                 <div class="media-wrap">
                     <a href="/Project1WebApplication/index">
-                        <img src="<%=request.getContextPath()%>/resources/assets/images/4606293-1-192x207.jpg" alt="Mobirise" title="">
+                        <img src="/Project1WebApplication/resources/assets/images/4606293-1-192x207.jpg" alt="Mobirise" title="">
                     </a>
                 </div>
             </div>
@@ -165,7 +250,7 @@
                 <h5 class="pb-3">
                     Links
                 </h5>
-                <p class="mbr-text">Manga news<br>Top manga of week<br>Anime movie</p>
+                <p class="mbr-text"><a href="https://www.manganetworks.co/anime/" target="_blank">Manga news</a><br><a href="https://tinanime.com/the-loai/de-cu-anime" target="_blank">Recomment Manga</a><br><a href="https://vuighe.net/" target="_blank">Anime movie</a></p>
             </div>
         </div>
         <div class="footer-lower">
@@ -177,7 +262,7 @@
             <div class="media-container-row mbr-white">
                 <div class="col-sm-6 copyright">
                     <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2017 Mobirise - All Rights Reserved
+                        © Copyright 2018 - All Rights Reserved
                     </p>
                 </div>
                 <div class="col-md-6">
@@ -220,15 +305,19 @@
 </section>
 
 
-  <script src="<%=request.getContextPath()%>/resources/assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/popper/popper.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/tether/tether.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/dropdown/js/script.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/assets/theme/js/script.js"></script>
+  <script src="/Project1WebApplication/resources/assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="/Project1WebApplication/resources/assets/popper/popper.min.js"></script>
+  <script src="/Project1WebApplication/resources/assets/tether/tether.min.js"></script>
+  <script src="/Project1WebApplication/resources/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/Project1WebApplication/resources/assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="/Project1WebApplication/resources/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="/Project1WebApplication/resources/assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script src="/Project1WebApplication/resources/assets/datatables/jquery.data-tables.min.js"></script>
+  <script src="/Project1WebApplication/resources/assets/datatables/data-tables.bootstrap4.min.js"></script>
+  <script src="/Project1WebApplication/resources/assets/dropdown/js/script.min.js"></script>
+  <script src="/Project1WebApplication/resources/assets/theme/js/script.js"></script>
   
   
-</body>
+  <input name="animation" type="hidden">
+  </body>
 </html>

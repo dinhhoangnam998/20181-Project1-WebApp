@@ -45,7 +45,8 @@ public class CreationController {
 	@PostMapping("add")
 	public String add(@ModelAttribute("creation") Creation creation) {
 		creationService.save(creation);
-		return "redirect:/admin/creation/";
+		// here need replace
+		return "redirect:/admin/creation/add";
 	}
 
 	@GetMapping("edit")

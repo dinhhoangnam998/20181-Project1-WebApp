@@ -37,7 +37,8 @@ public class AuthorController {
 	@PostMapping("add")
 	public String add(@ModelAttribute("author") Author author) {
 		authorService.save(author);
-		return "redirect:/admin/author/";
+		// here need replace
+		return "redirect:/admin/author/add";
 	}
 
 	@GetMapping("edit")

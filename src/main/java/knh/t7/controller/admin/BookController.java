@@ -50,7 +50,8 @@ public class BookController {
 	@PostMapping("add")
 	public String add(@ModelAttribute("book") Book book) {
 		bookService.save(book);
-		return "redirect:/admin/book/";
+		// need replace
+		return "redirect:/admin/book/add";
 	}
 
 	@GetMapping("edit")

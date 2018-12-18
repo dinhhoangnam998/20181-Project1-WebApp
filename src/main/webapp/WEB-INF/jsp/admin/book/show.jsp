@@ -22,6 +22,9 @@
 			<td>Cover Price</td>
 			<td>Description</td>
 			<td>Image Url</td>
+			<td>Creation</td>
+			<td>Type</td>
+			<td>Publisher</td>
 		</tr>
 
 		<c:forEach var="listItem" items="${listBook}">
@@ -37,6 +40,9 @@
 				<td>${listItem.coverprice}</td>
 				<td>${listItem.description}</td>
 				<td>${listItem.imageurl}</td>
+				<td>${listItem.creation.name}</td>
+				<td>${listItem.type.name}</td>
+				<td>${listItem.publisher.name}</td>
 			</tr>
 		</c:forEach>
 	</table>
