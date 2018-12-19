@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html >
 <head>
@@ -91,12 +91,12 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(0).id}"><img src="/Project1WebApplication/resources/assets/images/4-676x947.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(0).id}"><img src="${list.get(0).imageurl}" alt="BookImage" title="moreinfo" height="469" width="670"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            book.creation.name</h4>
-                        <p class="mbr-text mbr-fonts-style display-7">book.creation.description</p>
+                            ${list.get(0).creation.name}</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">${list.get(0).creation.description}</p>
                     </div>
                 </div>
             </div>
@@ -104,13 +104,13 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(1).id}"><img src="/Project1WebApplication/resources/assets/images/1-636x869.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(1).id}"><img src="${list.get(1).imageurl}" alt="BookImage" title="moreinfo" height="469" width="670"></a>
                     </div>
                     <div class="card-box ">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            book.creation.name
+                            ${list.get(1).creation.name}
                         </h4>
-                        <p class="mbr-text mbr-fonts-style display-7">book.creation.description</p>
+                        <p class="mbr-text mbr-fonts-style display-7">${list.get(1).creation.description}</p>
                     </div>
                 </div>
             </div>
@@ -118,13 +118,13 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(2).id}"><img src="/Project1WebApplication/resources/assets/images/5-676x966.png" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(2).id}"><img src="${list.get(2).imageurl}" alt="BookImage" title="moreinfo" height="469" width="670"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            book.creation.name
+                            ${list.get(2).creation.name}
                         </h4>
-                        <p class="mbr-text mbr-fonts-style display-7">book.creation.description</p>
+                        <p class="mbr-text mbr-fonts-style display-7">${list.get(2).creation.description}</p>
                     </div>
                 </div>
             </div>
@@ -145,11 +145,11 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(3).id}"><img src="/Project1WebApplication/resources/assets/images/1-639x944.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(3).id}"><img src="${list.get(3).imageurl}" alt="BookImage" title="moreinfo" height="469" width="670"></a>
                     </div>
                     <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7">book.creation.name</h4>
-                        <p class="mbr-text mbr-fonts-style display-7">book.creation.description</p>
+                        <h4 class="card-title pb-3 mbr-fonts-style display-7">${list.get(3).creation.name}</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">${list.get(3).creation.description}</p>
                     </div>
                 </div>
             </div>
@@ -157,13 +157,13 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(4).id}"><img src="/Project1WebApplication/resources/assets/images/3-676x955.png" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(4).id}"><img src="${list.get(4).imageurl}" alt="BookImage" title="moreinfo" height="469" width="670"></a>
                     </div>
                     <div class="card-box ">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            book.creation.name
+                            ${list.get(4).creation.name}
                         </h4>
-                        <p class="mbr-text mbr-fonts-style display-7">book.creation.description</p>
+                        <p class="mbr-text mbr-fonts-style display-7">${list.get(4).creation.description}</p>
                     </div>
                 </div>
             </div>
@@ -171,13 +171,13 @@
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(5).id}"><img src="/Project1WebApplication/resources/assets/images/4-348x500.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(5).id}"><img src="${list.get(5).imageurl}" alt="BookImage" title="moreinfo" height="469" width="670"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            book.creation.name
+                            ${list.get(5).creation.name}
                         </h4>
-                        <p class="mbr-text mbr-fonts-style display-7">book.creation.description</p>
+                        <p class="mbr-text mbr-fonts-style display-7">${list.get(5).creation.description}</p>
                     </div>
                 </div>
             </div>
@@ -200,61 +200,61 @@
             
         <div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <a href="/Project1WebApplication/book/info?id=${list.get(6).id}"><img src="/Project1WebApplication/resources/assets/images/1-510x733.jpg" alt="" title=""></a>
+                    <a href="/Project1WebApplication/book/info?id=${list.get(6).id}"><img src="${list.get(6).imageurl}" alt="BookImage" title="moreinfo" height="357" width="509"></a>
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
                         <p class="mbr-fonts-style display-5">
-                           book.creation.name
+                           ${list.get(6).creation.name}
                         </p>
                     </div>
                     <div class="item-role px-2">
-                        <p>book.creation.author.name</p>
+                        <p>${list.get(6).creation.author.name}</p>
                     </div>
                     
                 </div>
             </div><div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <a href="/Project1WebApplication/book/info?id=${list.get(7).id}"><img src="/Project1WebApplication/resources/assets/images/2-510x680.jpg" alt="" title=""></a>
+                    <a href="/Project1WebApplication/book/info?id=${list.get(7).id}"><img src="${list.get(7).imageurl}" alt="BookImage" title="moreinfo" height="357" width="509"></a>
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
                         <p class="mbr-fonts-style display-5">
-                           book.creation.name
+                           ${list.get(7).creation.name}
                         </p>
                     </div>
                     <div class="item-role px-2">
-                        <p>book.creation.author.name</p>
+                        <p>${list.get(7).creation.author.name}</p>
                     </div>
                     
                 </div>
             </div><div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <a href="/Project1WebApplication/book/info?id=${list.get(8).id}"><img src="/Project1WebApplication/resources/assets/images/4-510x720.jpg" alt="" title=""></a>
+                    <a href="/Project1WebApplication/book/info?id=${list.get(8).id}"><img src="${list.get(8).imageurl}" alt="BookImage" title="moreinfo" height="357" width="509"></a>
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
                         <p class="mbr-fonts-style display-5">
-                           book.creation.name
+                           ${list.get(8).creation.name}
                         </p>
                     </div>
                     <div class="item-role px-2">
-                        <p>book.creation.author.name</p>
+                        <p>${list.get(8).creation.author.name}</p>
                     </div>
                     
                 </div>
             </div><div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <a href="/Project1WebApplication/book/info?id=${list.get(9).id}"><img src="/Project1WebApplication/resources/assets/images/5-1-200x282.jpg" alt="" title=""></a>
+                    <a href="/Project1WebApplication/book/info?id=${list.get(9).id}"><img src="${list.get(9).imageurl}" alt="BookImage" title="moreinfo" height="357" width="509"></a>
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
                         <p class="mbr-fonts-style display-5">
-                           book.creation.name
+                           ${list.get(9).creation.name}
                         </p>
                     </div>
                     <div class="item-role px-2">
-                        <p>book.creation.author.name</p>
+                        <p>${list.get(9).creation.author.name}</p>
                     </div>
                     
                 </div>
@@ -275,7 +275,7 @@
             
         <div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <a href="/Project1WebApplication/book/info?id=${list.get(10).id}"><img src="/Project1WebApplication/resources/assets/images/6-1-308x431.jpg" alt="" title=""></a>
+                    <a href="/Project1WebApplication/book/info?id=${list.get(10).id}"><img src="/Project1WebApplication/resources/assets/images/6-1-308x431.jpg" alt="BookImage" title="moreinfo" height="357" width="509"></a>
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
@@ -290,7 +290,7 @@
                 </div>
             </div><div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <a href="/Project1WebApplication/book/info?id=${list.get(11).id}"><img src="/Project1WebApplication/resources/assets/images/7-1-313x445.jpg" alt="" title=""></a>
+                    <a href="/Project1WebApplication/book/info?id=${list.get(11).id}"><img src="/Project1WebApplication/resources/assets/images/7-1-313x445.jpg" alt="BookImage" title="moreinfo" height="357" width="509"></a>
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
@@ -305,7 +305,7 @@
                 </div>
             </div><div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <a href="/Project1WebApplication/book/info?id=${list.get(12).id}"><img src="/Project1WebApplication/resources/assets/images/8-208x350.jpg" alt="" title=""></a>
+                    <a href="/Project1WebApplication/book/info?id=${list.get(12).id}"><img src="/Project1WebApplication/resources/assets/images/8-208x350.jpg" alt="BookImage" title="moreinfo" height="357" width="509"></a>
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
@@ -320,7 +320,7 @@
                 </div>
             </div><div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <a href="/Project1WebApplication/book/info?id=${list.get(13).id}"><img src="/Project1WebApplication/resources/assets/images/12-1-400x543.jpg" alt="" title=""></a>
+                    <a href="/Project1WebApplication/book/info?id=${list.get(13).id}"><img src="/Project1WebApplication/resources/assets/images/12-1-400x543.jpg" alt="BookImage" title="moreinfo" height="357" width="509"></a>
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
@@ -347,7 +347,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(14).id}"><img src="/Project1WebApplication/resources/assets/images/2-432x536.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(14).id}"><img src="/Project1WebApplication/resources/assets/images/2-432x536.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -361,7 +361,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(15).id}"><img src="/Project1WebApplication/resources/assets/images/5-432x614.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(15).id}"><img src="/Project1WebApplication/resources/assets/images/5-432x614.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -375,7 +375,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(16).id}"><img src="/Project1WebApplication/resources/assets/images/2-432x648.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(16).id}"><img src="/Project1WebApplication/resources/assets/images/2-432x648.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -389,7 +389,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(17).id}"><img src="/Project1WebApplication/resources/assets/images/1-432x679.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(17).id}"><img src="/Project1WebApplication/resources/assets/images/1-432x679.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -402,7 +402,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(1).id}"><img src="/Project1WebApplication/resources/assets/images/1-432x694.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(1).id}"><img src="/Project1WebApplication/resources/assets/images/1-432x694.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -415,7 +415,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(2).id}"><img src="/Project1WebApplication/resources/assets/images/2-432x631.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(2).id}"><img src="/Project1WebApplication/resources/assets/images/2-432x631.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -439,7 +439,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(3).id}"><img src="/Project1WebApplication/resources/assets/images/3-432x620.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(3).id}"><img src="/Project1WebApplication/resources/assets/images/3-432x620.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -453,7 +453,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(4).id}"><img src="/Project1WebApplication/resources/assets/images/2-349x499.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(4).id}"><img src="/Project1WebApplication/resources/assets/images/2-349x499.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -467,7 +467,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <img src="/Project1WebApplication/resources/assets/images/3-333x500.jpg" alt="Mobirise" title="">
+                        <img src="/Project1WebApplication/resources/assets/images/3-333x500.jpg" alt="BookImage" title="moreinfo" height="273" width="420">
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -481,7 +481,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(5).id}"><img src="/Project1WebApplication/resources/assets/images/15-432x826.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(5).id}"><img src="/Project1WebApplication/resources/assets/images/15-432x826.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -494,7 +494,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(6).id}"><img src="/Project1WebApplication/resources/assets/images/2-432x618.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(6).id}"><img src="/Project1WebApplication/resources/assets/images/2-432x618.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
@@ -507,7 +507,7 @@
             <div class="card p-3 col-12 col-md-6 col-lg-2">
                 <div class="card-wrapper">
                     <div class="card-img">
-                        <a href="/Project1WebApplication/book/info?id=${list.get(7).id}"><img src="/Project1WebApplication/resources/assets/images/11-432x576.jpg" alt="Mobirise" title=""></a>
+                        <a href="/Project1WebApplication/book/info?id=${list.get(7).id}"><img src="/Project1WebApplication/resources/assets/images/11-432x576.jpg" alt="BookImage" title="moreinfo" height="273" width="420"></a>
                     </div>
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
