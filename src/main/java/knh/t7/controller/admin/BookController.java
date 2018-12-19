@@ -33,8 +33,8 @@ public class BookController {
 
 	@GetMapping("add")
 	public String add(Model model) {
-		model.addAttribute("book", new Book("japan", 72, 5, "default", 20, 25, 15, 80, "yourdescriptionhere",
-				"yourcommenthere", "yourimageurlhere", 1, 1, 1));
+		model.addAttribute("book", new Book("VietNamese", 120, 2, "default", 30, 45, 25, 120, "description",
+				"comment", "imageurl", 1, 1, 1));
 
 		List<Creation> listCreation = bookService.getAllCreation();
 		List<Type> listType = bookService.getAllType();
