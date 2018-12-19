@@ -167,6 +167,7 @@
 								<th class="head-item mbr-fonts-style display-7">Death Day</th>
 								<th class="head-item mbr-fonts-style display-7">Description</th>
 								<th class="head-item mbr-fonts-style display-7">Image Url</th>
+								<th class="head-item mbr-fonts-style display-7">....</th>
 								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/author/add">Add</a></th>
 							</tr>
 						</thead>

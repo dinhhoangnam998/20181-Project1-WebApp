@@ -167,6 +167,7 @@
 								<th class="head-item mbr-fonts-style display-7">Release Date</th>
 								<th class="head-item mbr-fonts-style display-7">Category Id</th>
 								<th class="head-item mbr-fonts-style display-7">Author Id</th>
+								<th class="head-item mbr-fonts-style display-7">....</th>
 								
 								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/creation/add">Add</a></th>
 							</tr>

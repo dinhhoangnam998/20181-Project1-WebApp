@@ -165,6 +165,7 @@
 								<th class="head-item mbr-fonts-style display-7">Book Id</th>
 								<th class="head-item mbr-fonts-style display-7">Sale Event Id</th>
 								<th class="head-item mbr-fonts-style display-7">Sale Percent</th>
+								<th class="head-item mbr-fonts-style display-7">....</th>
 								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/book_SaleEvent/add">Add</a></th>
 							</tr>
 						</thead>

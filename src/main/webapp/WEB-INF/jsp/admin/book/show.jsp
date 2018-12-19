@@ -160,13 +160,14 @@
 						<thead>
 							<tr class="table-heads ">
 								<th class="head-item mbr-fonts-style display-7">Id</th>
-								<th class="head-item mbr-fonts-style display-7">Language</th>
 								<th class="head-item mbr-fonts-style display-7">Page Number</th>
 								<th class="head-item mbr-fonts-style display-7">Width</th>
 								<th class="head-item mbr-fonts-style display-7">Height</th>
-								<th class="head-item mbr-fonts-style display-7">Weight</th>
 								<th class="head-item mbr-fonts-style display-7">Cover Price</th>
-								<th class="head-item mbr-fonts-style display-7">Image Url</th>
+								<th class="head-item mbr-fonts-style display-7">Creation</th>
+								<th class="head-item mbr-fonts-style display-7">Type</th>
+								<th class="head-item mbr-fonts-style display-7">Publisher</th>
+								<th class="head-item mbr-fonts-style display-7">....</th>
 								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/book/add">Add</a></th>
 							</tr>
 						</thead>
@@ -175,13 +176,13 @@
 							<c:forEach var="listItem" items="${listBook}">
 								<tr>
 									<td class="body-item mbr-fonts-style display-7">${listItem.id}</td>
-									<td class="body-item mbr-fonts-style display-7">${listItem.language}</td>
 									<td class="body-item mbr-fonts-style display-7">${listItem.pagenumber}</td>
 									<td class="body-item mbr-fonts-style display-7">${listItem.width}</td>
 									<td class="body-item mbr-fonts-style display-7">${listItem.height}</td>
-									<td class="body-item mbr-fonts-style display-7">${listItem.weight}</td>
 									<td class="body-item mbr-fonts-style display-7">${listItem.coverprice}</td>
-									<td class="body-item mbr-fonts-style display-7">${listItem.imageurl}</td>
+									<td class="body-item mbr-fonts-style display-7">${listItem.creation.name}</td>
+									<td class="body-item mbr-fonts-style display-7">${listItem.type.name}</td>
+									<td class="body-item mbr-fonts-style display-7">${listItem.publisher.name}</td>
 									<td class="body-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/book/edit?id=${listItem.id}">Edit</a></td>
 									<td class="body-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/book/delete?id=${listItem.id}">Delete</a></td>
 								</tr>
