@@ -22,4 +22,9 @@ public class SignInService {
 		return (user.getPassword().equals(password));
 	}
 
+
+	public int getUserIdByUsername(String username) {
+		return userJpa.findByUsername(username).getId();
+	}
+
 }

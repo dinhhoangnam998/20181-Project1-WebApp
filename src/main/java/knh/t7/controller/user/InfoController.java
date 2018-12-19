@@ -1,5 +1,7 @@
 package knh.t7.controller.user;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,22 @@ public class InfoController {
 		User user = infoService.getUserById(id);
 		model.addAttribute("user", user);
 		return "user/info";
+	}
+	
+	@GetMapping("userinfo")
+	public String userinfo(Model model, HttpServletRequest request) {
+		Boolean isSignIn = (Boolean)request.getSession().getAttribute("isSignIn");
+		if(isSignIn == null) {
+			return "redirect:/user/signIn";
+		}
+		else {
+			int userId = (Integer)request.getSession().getAttribute("userId");
+			User user = infoService.getUserById(userId);
+			model.addAttribute("user", user);
+			return "user/info";
+		}
+		
+		
 	}
 
 }

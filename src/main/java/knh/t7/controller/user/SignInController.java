@@ -1,5 +1,7 @@
 package knh.t7.controller.user;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,10 +26,14 @@ public class SignInController {
 
 	@PostMapping("signIn")
 	public String signIn(@RequestParam("username") String username, @RequestParam("password") String password,
-			Model model) {
+			Model model, HttpServletRequest request) {
 		if (signInService.checkSignIn(username, password)) {
+			int userId = signInService.getUserIdByUsername(username);
+			request.getSession().setAttribute("userId", userId);
+			request.getSession().setAttribute("isSignIn", true);
 			return "redirect:/";
 		} else {
+			request.getSession().setAttribute("isSignIn", false);
 			return "redirect:/user/signInFailure";
 		}
 

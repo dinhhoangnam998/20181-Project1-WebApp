@@ -55,7 +55,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="/Project1WebApplication/user/signUp">Sign Up</a>
-                </li></ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="/Project1WebApplication/user/userinfo">User Info</a>
+                </li>
+                
+                </ul>
             <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-danger display-4" href="https://mobirise.co"><span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>Search</a></div>
         </div>
     </nav>
