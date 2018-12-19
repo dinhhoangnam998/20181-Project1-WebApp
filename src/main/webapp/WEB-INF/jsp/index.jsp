@@ -539,7 +539,7 @@
                         <span class="mbri-bootstrap mbr-iconfont"></span>
                     </div>
                     <h4 class="card-title media-body py-3 mbr-fonts-style display-7">
-                        Feature1</h4>
+                        Sale > 10% </h4>
                 </div>
                 <div class="card-box">
                     <p class="mbr-text mbr-fonts-style display-7">
@@ -554,7 +554,7 @@
                         <span class="mbri-touch mbr-iconfont"></span>
                     </div>
                     <h4 class="card-title media-body py-3 mbr-fonts-style display-7">
-                        Feature2</h4>
+                        Nationwide Delivery</h4>
                 </div>
                 <div class="card-box">
                     <p class="mbr-text mbr-fonts-style display-7">
@@ -569,7 +569,7 @@
                         <span class="mbri-responsive mbr-iconfont"></span>
                     </div>
                     <h4 class="card-title media-body py-3 mbr-fonts-style display-7">
-                        Feature3</h4>
+                        Customer Care</h4>
                 </div>
                 <div class="card-box">
                     <p class="mbr-text mbr-fonts-style display-7">

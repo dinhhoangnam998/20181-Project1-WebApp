@@ -38,8 +38,6 @@ public class InfoController {
 			model.addAttribute("user", user);
 			return "user/info";
 		}
-		
-		
 	}
 
 }

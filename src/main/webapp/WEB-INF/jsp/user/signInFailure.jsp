@@ -7,6 +7,11 @@
 <title>Sign In Failure</title>
 </head>
 <body>
-<h4>Username or Password is not correct! Please try again</h4>
+<h4>Sign In Failure! Please try again</h4>
+<ul>Make sure:
+<li>Enter correct username and password</li>
+<li>You are not blocked</li>
+<li>You have right privilege</li>
+</ul>
 </body>
 </html>

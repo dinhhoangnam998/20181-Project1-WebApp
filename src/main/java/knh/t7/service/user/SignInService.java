@@ -19,12 +19,23 @@ public class SignInService {
 			return false;
 		}
 		
+		if(user.getState() == 1) {
+			return false;
+		}
+			
+		
 		return (user.getPassword().equals(password));
 	}
 
 
 	public int getUserIdByUsername(String username) {
 		return userJpa.findByUsername(username).getId();
+	}
+
+
+	public User getUserByUsername(String username) {
+		// TODO Auto-generated method stub
+		return userJpa.findByUsername(username);
 	}
 
 }
