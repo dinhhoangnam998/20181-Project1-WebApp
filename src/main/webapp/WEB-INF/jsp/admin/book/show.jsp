@@ -167,6 +167,7 @@
 								<th class="head-item mbr-fonts-style display-7">Weight</th>
 								<th class="head-item mbr-fonts-style display-7">Cover Price</th>
 								<th class="head-item mbr-fonts-style display-7">Image Url</th>
+								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/book/add">Add</a></th>
 							</tr>
 						</thead>
 

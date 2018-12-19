@@ -167,6 +167,7 @@
 								<th class="head-item mbr-fonts-style display-7">Input Price</th>
 								<th class="head-item mbr-fonts-style display-7">Quantity</th>
 								<th class="head-item mbr-fonts-style display-7">Remain</th>
+								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/book_InputEvent/add">Add</a></th>
 							</tr>
 						</thead>
 

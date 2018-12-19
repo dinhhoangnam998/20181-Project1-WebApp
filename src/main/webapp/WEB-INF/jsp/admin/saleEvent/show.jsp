@@ -164,6 +164,7 @@
 								<th class="head-item mbr-fonts-style display-7">Id</th>
 								<th class="head-item mbr-fonts-style display-7">Begin Date</th>
 								<th class="head-item mbr-fonts-style display-7">End Date</th>
+								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/saleEvent/add">Add</a></th>
 							</tr>
 						</thead>
 

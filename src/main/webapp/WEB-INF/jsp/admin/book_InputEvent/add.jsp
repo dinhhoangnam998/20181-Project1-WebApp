@@ -177,8 +177,8 @@
 								<div class="form-group">
 									<form:label
 										class="form-control-label mbr-fonts-style display-7"
-										path="inputprice">inputprice</form:label>
-									<form:input path="inputprice" type="number"
+										path="quantity">quantity</form:label>
+									<form:input path="quantity" type="number"
 										class="form-control" />
 								</div>
 							</div>

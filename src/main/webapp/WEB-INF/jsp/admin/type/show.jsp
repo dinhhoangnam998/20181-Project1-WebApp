@@ -163,22 +163,15 @@
 							<tr class="table-heads ">
 								<th class="head-item mbr-fonts-style display-7">Id</th>
 								<th class="head-item mbr-fonts-style display-7">Name</th>
-								<th class="head-item mbr-fonts-style display-7">Birth Day</th>
-								<th class="head-item mbr-fonts-style display-7">Death Day</th>
-								<th class="head-item mbr-fonts-style display-7">Description</th>
-								<th class="head-item mbr-fonts-style display-7">Image Url</th>
+								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/type/add">Add</a></th>
 							</tr>
 						</thead>
 
 						<tbody>
-							<c:forEach var="listItem" items="${listAuthor}">
+							<c:forEach var="listItem" items="${listType}">
 								<tr>
 									<td class="body-item mbr-fonts-style display-7">${listItem.id}</td>
 									<td class="body-item mbr-fonts-style display-7">${listItem.name}</td>
-									<td class="body-item mbr-fonts-style display-7">${listItem.birthday}</td>
-									<td class="body-item mbr-fonts-style display-7">${listItem.deathday}</td>
-									<td class="body-item mbr-fonts-style display-7">${listItem.description}</td>
-									<td class="body-item mbr-fonts-style display-7">${listItem.imageurl}</td>
 									<td class="body-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/type/edit?id=${listItem.id}">Edit</a></td>
 									<td class="body-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/type/delete?id=${listItem.id}">Delete</a></td>
 								</tr>

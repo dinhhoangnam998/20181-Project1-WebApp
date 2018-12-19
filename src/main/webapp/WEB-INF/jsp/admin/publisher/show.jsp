@@ -163,6 +163,7 @@
 							<tr class="table-heads ">
 								<th class="head-item mbr-fonts-style display-7">Id</th>
 								<th class="head-item mbr-fonts-style display-7">Name</th>
+								<th class="head-item mbr-fonts-style display-7"><a href="/Project1WebApplication/admin/publisher/add">Add</a></th>
 							</tr>
 						</thead>
 
