@@ -228,6 +228,14 @@
 								<div class="form-group">
 									<form:label
 										class="form-control-label mbr-fonts-style display-7"
+										path="description">description</form:label>
+									<form:input path="description" class="form-control" />
+								</div>
+							</div>
+							<div class="col-md-4 multi-horizontal" data-for="phone">
+								<div class="form-group">
+									<form:label
+										class="form-control-label mbr-fonts-style display-7"
 										path="imageurl">imageurl</form:label>
 									<form:input path="imageurl" class="form-control" />
 								</div>
