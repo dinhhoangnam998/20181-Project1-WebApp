@@ -35,10 +35,6 @@ public class SignUpController {
 		return "redirect:/user/signUpFailure";
 	}
 	
-//	@GetMapping("signUpSuccess")
-//	public String showSignUpSuccess(Model model) {
-//		return "user/signUpSuccess";
-//	}
 	
 	@GetMapping("signUpFailure")
 	public String showSignUpFailure(Model model) {
