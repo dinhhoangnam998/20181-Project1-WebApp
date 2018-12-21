@@ -42,7 +42,7 @@
 
 </head>
 <body>
-	<section class="menu cid-rcAl1mqHtK" once="menu" id="menu1-3">
+	<section class="menu cid-rcAkZnCOQ8" once="menu" id="menu1-2">
 
 
 
@@ -76,6 +76,13 @@
 					<li class="nav-item"><a
 						class="nav-link link text-white display-4"
 						href="/Project1WebApplication/user/signUp">Sign Up</a></li>
+					<li class="nav-item"><a
+						class="nav-link link text-white display-4"
+						href="/Project1WebApplication/user/userinfo">Your Profile</a></li>
+					<li class="nav-item"><a
+						class="nav-link link text-white display-4"
+						href="/Project1WebApplication/user/cart">Your Cart</a></li>
+
 				</ul>
 				<div class="navbar-buttons mbr-section-btn">
 					<a class="btn btn-sm btn-danger display-4"
@@ -248,15 +255,15 @@
 					<li class="nav-item mbr-fonts-style"><a
 						class="nav-link active show display-7" role="tab"
 						data-toggle="tab" href="#tabs3-w_tab0" aria-selected="true">
-							Responsive </a></li>
+							Delivery </a></li>
 					<li class="nav-item mbr-fonts-style"><a
 						class="nav-link  show active display-7" role="tab"
 						data-toggle="tab" href="#tabs3-w_tab1" aria-selected="true">
-							No coding </a></li>
+							Warranty </a></li>
 					<li class="nav-item mbr-fonts-style"><a
 						class="nav-link show active display-7" role="tab"
 						data-toggle="tab" href="#tabs3-w_tab2" aria-selected="true">
-							Unique Styles </a></li>
+							Always Update </a></li>
 
 
 
@@ -275,7 +282,7 @@
 								</div>
 								<h4
 									class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
-									MOBILE FRIENDLY</h4>
+									FREE</h4>
 								<p
 									class="mbr-section-text  align-center mbr-fonts-style display-7">
 									No special actions required, all sites you make with Mobirise
@@ -289,7 +296,7 @@
 								</div>
 								<h4
 									class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
-									MOBILE FRIENDLY</h4>
+									FREE</h4>
 								<p
 									class="mbr-section-text  align-center mbr-fonts-style display-7">
 									No special actions required, all sites you make with Mobirise
@@ -303,7 +310,7 @@
 								</div>
 								<h4
 									class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
-									MOBILE FRIENDLY</h4>
+									FREE</h4>
 								<p
 									class="mbr-section-text  align-center mbr-fonts-style display-7">
 									No special actions required, all sites you make with Mobirise

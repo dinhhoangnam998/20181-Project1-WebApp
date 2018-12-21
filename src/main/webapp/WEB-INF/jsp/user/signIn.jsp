@@ -41,7 +41,7 @@
 
 </head>
 <body>
-	<section class="menu cid-rcAl3sSLlJ" once="menu" id="menu1-4">
+	<section class="menu cid-rcAkZnCOQ8" once="menu" id="menu1-2">
 
 
 
@@ -75,6 +75,13 @@
 					<li class="nav-item"><a
 						class="nav-link link text-white display-4"
 						href="/Project1WebApplication/user/signUp">Sign Up</a></li>
+					<li class="nav-item"><a
+						class="nav-link link text-white display-4"
+						href="/Project1WebApplication/user/userinfo">Your Profile</a></li>
+					<li class="nav-item"><a
+						class="nav-link link text-white display-4"
+						href="/Project1WebApplication/user/cart">Your Cart</a></li>
+
 				</ul>
 				<div class="navbar-buttons mbr-section-btn">
 					<a class="btn btn-sm btn-danger display-4"

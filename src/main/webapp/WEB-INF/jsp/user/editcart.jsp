@@ -14,7 +14,7 @@
 	href="/Project1WebApplication/resources/assets/images/4606293-1-122x132.jpg"
 	type="image/x-icon">
 <meta name="description" content="Web Site Generator Description">
-<title>BookInfo</title>
+<title>Edit Cart</title>
 <link rel="stylesheet"
 	href="/Project1WebApplication/resources/assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet"
@@ -60,7 +60,7 @@ tr:nth-child(even) {
 
 </head>
 <body>
-	<section class="menu cid-rcAl7okSBl" once="menu" id="menu1-6">
+	<section class="menu cid-rcAkZnCOQ8" once="menu" id="menu1-2">
 
 
 
@@ -94,6 +94,13 @@ tr:nth-child(even) {
 					<li class="nav-item"><a
 						class="nav-link link text-white display-4"
 						href="/Project1WebApplication/user/signUp">Sign Up</a></li>
+					<li class="nav-item"><a
+						class="nav-link link text-white display-4"
+						href="/Project1WebApplication/user/userinfo">Your Profile</a></li>
+					<li class="nav-item"><a
+						class="nav-link link text-white display-4"
+						href="/Project1WebApplication/user/cart">Your Cart</a></li>
+
 				</ul>
 				<div class="navbar-buttons mbr-section-btn">
 					<a class="btn btn-sm btn-danger display-4"
@@ -184,12 +191,12 @@ tr:nth-child(even) {
 
 							<div class="card p-3 pr-3">
 								<form class="mbr-form"
-									action="/Project1WebApplication/user/order" method="GET">
-									<input type="hidden" name="bookId" value="${book.id}" />
+									action="/Project1WebApplication/user/order/edit" method="POST">
+									<input type="hidden" name="billDetailId" value="${billDetailId}" />
 									<div>
 										<div class="form-group">
-											Quantity: <input type="number" class="form-control px-3"
-												name="quantity" min="1" value="1" />
+											 New quantity: <input type="number" class="form-control px-3"
+												name="newQuantity" min="1" value="${quantity}" />
 										</div>
 									</div>
 

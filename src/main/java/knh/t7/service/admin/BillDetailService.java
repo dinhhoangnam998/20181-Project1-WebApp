@@ -13,12 +13,26 @@ public class BillDetailService {
 
 	@Autowired
 	private BillDetailJpa billDetailJpa;
-	
-	public List<BillDetail> getBillDetailList(int billId) {
-		if(billId == 0)
-			return billDetailJpa.findAll();
-		else
-			return billDetailJpa.findByBillId(billId);
+
+	public List<BillDetail> getAll() {
+		return billDetailJpa.findAll();
+	}
+
+	public BillDetail getById(int id) {
+		return billDetailJpa.getOne(id);
+	}
+
+	public void update(BillDetail billDetail) {
+		billDetailJpa.save(billDetail);
+	}
+
+	public void deleteById(int id) {
+		billDetailJpa.deleteById(id);
+	}
+
+	public void save(BillDetail billDetail) {
+		billDetailJpa.save(billDetail);
+
 	}
 
 }

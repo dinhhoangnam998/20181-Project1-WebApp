@@ -6,4 +6,6 @@ import knh.t7.model.Bill;
 
 public interface BillJpa extends JpaRepository<Bill, Integer>  {
 
+	Bill findByUser_IdAndState(int userId, int i);
+
 }
